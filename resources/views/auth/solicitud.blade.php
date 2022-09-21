@@ -333,7 +333,13 @@ $equipo3->tipo = "Laptop";
 	<br>
 	<br>
 	<div class="container">
-		<button href="{{ URL::to('/solicitud/download-pdf') }}" class="btn btn-secundary btn-lg active" type="submit">Previsualizar solicitud</button>
+		<button 
+			href="{{ URL::to('/solicitud/download-pdf') }}" 
+			class="btn btn-secundary btn-lg active" 
+			type="submit"
+		>
+		Previsualizar solicitud
+		</button>
 	</div>
 	<br>
 	<br>

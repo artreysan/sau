@@ -34,5 +34,7 @@ Route::post('/cerrar', [LogoutController::class,'store'])->name('cerrar');
 Route::get('/muro', [PostController::class,'index'])->name('post.index');
 
 Route::get('/solicitud', [SolicitudesController::class,'index']);
+//Download pdf
+Route::get('/solicitud/download-pdf', [SolicitudesController::class, 'downloadPdf']);
 Route::post('/solicitud', [SolicitudesController::class,'store']);
 
