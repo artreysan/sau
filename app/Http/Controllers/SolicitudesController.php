@@ -6,6 +6,8 @@ use auth;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 class SolicitudesController extends Controller
 {
@@ -15,10 +17,17 @@ class SolicitudesController extends Controller
         $this->middleware('auth');
     }
     //
-    public function index()
-    {
+    public function index(){
         return view('auth.solicitud');
     }
+
+    public function downloadPdf(){
+        $pdf_name = time().'_sau.pdf';
+        $pdf = Pdf::loadView('solicitud.sau');
+        $pdf->setPaper('a4');
+        return $pdf->stream();
+    }
+
 
     public function store(Request $request)
     {
