@@ -5,24 +5,39 @@
 @endsection
 
 @section('contenido')
+<nav class="navbar navbar-inverse sub-navbar navbar-fixed-top">
+  <div class="container">
+    <div class="collapse navbar-collapse" id="subenlaces">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/muro">{{auth()->user()->name}} {{auth()->user()->apellido_paterno}} {{auth()->user()->apellido_materno}}</a></li>
+        <li class="dropdown">
+          @csrf
+          <a href="/muro" class="glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <form method="POST" action="{{ url('cerrar') }}">
+                @csrf
+                <div class="col-md-2">
+                        <button class="btn btn-primary" type="submit">
+                            Cerrar sesión
+                        </button>
+                </div>
+            </form>
+            </li>    
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="container">
     <div class="row">
-        <div class="col-md-10" style="background-color:#F6F6F6;"><h4 text-gray-700>Bienvenid@ {{auth()->user()->name}}</h4></div>
-        <form method="POST" action="{{ url('cerrar') }}">
-            @csrf
-            <div class="col-md-2">
-                    <button class="btn btn-primary" type="submit">
-                        Cerrar sesión
-                    </button>
-            </div>
-        </form>
-    </div>
-    <hr class="red">
-
-
-
-    <div class="row">
-        <div class="col-md-2"><h5>Realizar solicitud</h5></div>
+        <div class="col-md-2"><h5>Nueva solicitud</h5></div>
         <div class="col-md-2">
             <a href="{{ url('/solicitud') }}"><button class="btn btn-primary btn-sm active"type="button"> Realizar solicitud</button> </a>
         </div>
@@ -33,9 +48,7 @@
             <a href="{{ url('/solicitud') }}"><button class="btn btn-primary btn-sm active"type="button"> Editar solicitud</button> </a>
         </div>
     </div>
-    <br>
-    <hr>
-    <br>
+    <hr class="red">
     <ul class="nav nav-tabs">
         <li class="active">
             <a data-toggle="tab" href="#tab-01">Pendientes</a>

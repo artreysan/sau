@@ -11,12 +11,6 @@
 </head>
 
 <body>
-    <br>
-    <div class="container" >
-        <br>
-        <img width="300" height="40" src="{{URL('/img/logo.png')}}">
-    </div>
-    <br>
     <header>
 
             @yield('titulo')

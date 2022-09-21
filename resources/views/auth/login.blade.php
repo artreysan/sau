@@ -6,14 +6,12 @@
 
 
 @section('contenido')
-
-
-<div class="container">
-
+<br>
+<div class="container" >
+    <br>
+    <img width="300" height="40" src="{{URL('/img/logo.png')}}">
 </div>
 <br>
-<br>
-
 <div class="container">
     <div class="row">
         <div class="col-md-6"><img src="{{asset('img/index.png')}}" style="width:100%; height:100%;" alt="Logo"></div>
