@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SolicitudMailable;
 use Svg\Tag\Path;
 
 class SolicitudesController extends Controller{
@@ -18,6 +20,12 @@ class SolicitudesController extends Controller{
     //
     public function index(){
         return view('auth.solicitud');
+    }
+
+    public function sendMail(){
+        $correo = new SolicitudMailable;
+        Mail::to('rarturo899@gmail.com')->send($correo->attach(storage_path('pdf/1664235532_sau.pdf')));
+        return "Menasaje enviado";
     }
 
     public function downloadPdf(){
@@ -66,10 +74,7 @@ class SolicitudesController extends Controller{
         auth()->attempt($request->only('email','password'));
 
         return redirect()->route('posts.index');
-
-
     }
-
 
 
 }
