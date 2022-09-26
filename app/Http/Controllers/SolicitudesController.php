@@ -7,10 +7,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Svg\Tag\Path;
 
-
-class SolicitudesController extends Controller
-{
+class SolicitudesController extends Controller{
 
     public function __construct()
     {
@@ -22,16 +21,16 @@ class SolicitudesController extends Controller
     }
 
     public function downloadPdf(){
+        $path = storage_path('pdf/');
         $pdf_name = time().'_sau.pdf';
         $pdf = Pdf::loadView('solicitud.sau');
+        $pdf->save($path.'/'.$pdf_name);
         $pdf->setPaper('a4');
-        return $pdf->stream();
+        return $pdf->download($pdf_name);
     }
 
 
-    public function store(Request $request)
-    {
-
+    public function store(Request $request){
         $this->validate($request,[
             'name' => 'required|min:1|max:20',
             'apellido_paterno' => 'required|min:5|max:20',
@@ -53,9 +52,7 @@ class SolicitudesController extends Controller
             'equipo_sict' => 'required'
         ]);
 
-/*
-        User::create([
-
+        USER::create([
             'ubicacion' => $request->ubicacion,
             'empresa' => $request->empresa,
             'contrato' => $request->contrato,
@@ -69,8 +66,6 @@ class SolicitudesController extends Controller
         auth()->attempt($request->only('email','password'));
 
         return redirect()->route('posts.index');
-
-*/
 
 
     }
