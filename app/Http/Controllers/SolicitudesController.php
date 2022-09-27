@@ -39,7 +39,7 @@ class SolicitudesController extends Controller
         $pdf = Pdf::loadView('solicitud.sau');
         $pdf->save($path.'/'.$pdf_name);
         $pdf->setPaper('a4');
-        return $pdf->download($pdf_name);
+        return $pdf->stream($pdf_name);
     }
     
     public function crear (Request $request){
