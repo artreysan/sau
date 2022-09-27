@@ -1,10 +1,9 @@
 <?php
 
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\LogoutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\PrincipalController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SolicitudesController;
 
@@ -29,12 +28,14 @@ Route::post('/crear', [RegisterController::class,'store']);
 Route::get('/login', [LoginController::class,'index'])->name('login');
 Route::post('/login', [LoginController::class,'store']);
 
-Route::post('/cerrar', [LogoutController::class,'store'])->name('cerrar');
+Route::get('/logout', [LogoutController::class,'store'])->name('logout');
 
 Route::get('/muro', [PostController::class,'index'])->name('post.index');
 
 Route::get('/solicitud', [SolicitudesController::class,'index']);
+Route::post('/solicitud', [SolicitudesController::class,'crear']);
+
 //Download pdf
-Route::get('/solicitud/download-pdf', [SolicitudesController::class, 'downloadPdf']);
-Route::post('/solicitud', [SolicitudesController::class,'store']);
+Route::get('/solicitud/download-pdf', [SolicitudesController::class, 'index']);
+Route::post('/solicitud/download-pdf', [SolicitudesController::class,'store']);
 

@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Enterprise;
-use App\Models\Location;
+use App\Http\Controllers\auth;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -46,8 +45,6 @@ class RegisterController extends Controller
         auth()->attempt($request->only('email','password'));
 
         return redirect()->route('post.index');
-
-        
 
 
     }

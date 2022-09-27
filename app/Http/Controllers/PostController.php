@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Solicitud;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use view;
@@ -16,6 +17,7 @@ class PostController extends Controller
 
     public function index()
     {
-        return view('dashboard');
+        $solicitud = Solicitud::all();
+        return view('dashboard', compact('solicitud'));
     }
 }

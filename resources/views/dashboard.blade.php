@@ -11,19 +11,13 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/muro">{{auth()->user()->name}} {{auth()->user()->apellido_paterno}} {{auth()->user()->apellido_materno}}</a></li>
         <li class="dropdown">
-          @csrf
-          <a href="/muro" class="glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li>
-              <form method="POST" action="{{ url('cerrar') }}">
-                @csrf
-                <div class="col-md-2">
-                        <button class="btn btn-primary" type="submit">
-                            Cerrar sesión
-                        </button>
-                </div>
-            </form>
-            </li>    
+            <li><a href="#"></a></li>
+            <li><a href="#">Algo</a></li>
+            <li><a href="#">Algo más aquí</a></li>
+            <li class="divider"></li>
+            <li><a href="{{route('logout')}}">Cerrar sesión</a></li>
           </ul>
         </li>
       </ul>
@@ -38,16 +32,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-2"><h5>Nueva solicitud</h5></div>
-        <div class="col-md-2">
-            <a href="{{ url('/solicitud') }}"><button class="btn btn-primary btn-sm active"type="button"> Realizar solicitud</button> </a>
+        <div class="col-md-1">
+            <a href="{{ url('/solicitud') }}"><button class="btn btn-default glyphicon glyphicon-plus-sign"type="button"></button> </a>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-2"><h5>Editar solicitud</h5></div>
-        <div class="col-md-2">
-            <a href="{{ url('/solicitud') }}"><button class="btn btn-primary btn-sm active"type="button"> Editar solicitud</button> </a>
-        </div>
-    </div>
+    <br>
     <hr class="red">
     <ul class="nav nav-tabs">
         <li class="active">
@@ -64,27 +53,24 @@
                   <tr>
                     <th scope="col">Folio</th>
                     <th scope="col">Fecha de solicitud</th>
+                    <th scope="col">Colaborador</th>
+                    <th scope="col">Autorizador</th>
                     <th scope="col">Status</th>
                   </tr>
                 </thead>
                 <tbody class="table-group-divider">
+                  @foreach ($solicitud as $solicitud)
                   <tr>
-                    <th scope="row">1</th>
-                    <td>23-Mayo-2022</td>
-                    <td>Pendiente</td>
+                    <th scope="row">{{$solicitud->id}}</th>
+                    <td>{{$solicitud->created_at}}</td>
+                    <td>{{$solicitud->nombre}} {{$solicitud->apellido_paterno}}</td>
+                    <td>{{$solicitud->autorizador}}</td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>22-Mayo-2022</td>
-                    <td>Validado</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>15-Septiembre-2022</td>
-                    <td>Validado</td>
-                  </tr>
+                  @endforeach
                 </tbody>
               </table>
+
+
         </div>
         <br>
         <div class="tab-pane" id="tab-01">...</div>

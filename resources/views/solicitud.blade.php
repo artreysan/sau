@@ -93,8 +93,8 @@ $equipo3->tipo = "Laptop";
 			<div class="row">
 				<div class="col-md-4"><strong>Nombre del director o subdiector:</strong></div>
 				<div class="col-md-8">
-					<select name="autorizadores" id="auto_id" required>
-						<option value="autorizador1">Ing. Mario César Herrera González</option>
+					<select name="autorizador" id="auto_id" required>
+						<option value="$autorizador1">Ing. Mario César Herrera González</option>
 						<option value="autorizador2">Ing. José Antonio Rulfo Zaragoza</option>
 						<option value="autorizador3">Mtra. Edna Patricia Santiago Vargas</option>
 						<option value="autorizador4">Subdirector de Innovación Tecnológica</option>
@@ -106,7 +106,7 @@ $equipo3->tipo = "Laptop";
 			<div class="row">
 				<div class="col-md-4"><strong>Dirección o subdireción:</strong></div>
 				<div class="col-md-8">
-					<select name="puestos" id="auto_id" required>
+					<select name="puesto" id="puesto_id" required>
 						<option value="puesto1">Director Coordinador de Innovación y Desarrollo Tecnológico</option>
 						<option value="puesto2">Director de Desarrollo Tecnológico</option>
 						<option value="puesto3">Subdirectora de Sistemas Administrativos</option>
@@ -162,11 +162,11 @@ $equipo3->tipo = "Laptop";
 			<div class="col-md-3">
 				<input
                 	class="border border-success"
-                	id="name"
-                	name="name"
+                	id="nombre"
+                	name="nombre"
                 	type="text"
                 	placeholder=" Tu nombre "
-                	value="{{old ('name')}}"
+                	value="{{old ('nombre')}}"
                 />
 			</div>
 			<br>
@@ -175,7 +175,7 @@ $equipo3->tipo = "Laptop";
 		<div class="row">
 			<div class="col-md-3"><strong>Ubicación en la SICT:</strong></div>
 			<div class="col-md-3">
-				<select name="ubicacion" id="ubicacion_id" required>
+				<select name="direccion" id="direccion" required>
 					<option value="ubicacion1"> Av. Insurgentes Sur 1089, Col. Nochebuena, Benito Juárez, 3720, CDMX. Piso 8 </option>
 					<option value="ubicacion2"> Av. Insurgentes Sur 1089, Col. Nochebuena, Benito Juárez, 3720, CDMX. Piso 9 </option>
 				</select>
@@ -185,7 +185,7 @@ $equipo3->tipo = "Laptop";
 		<div class="row">
 			<div class="col-md-3"><strong>Empresa:</strong></div>
 			<div class="col-md-4">
-				<select name="empresa" id="empresa_id" required>
+				<select name="empresa" id="empresa" required>
 					<option value="empresa1"> Electronica Sacachispas S.A de C.V </option>
                 	<option value="empresa2"> Patito S.A. de C.V </option>
 				</select>
@@ -194,7 +194,7 @@ $equipo3->tipo = "Laptop";
 			<div class="col-md-2">
 				<select name="contrato" id="contrato" required>
 					<option value="contrato1"> MVC-4589 </option>
-                	<option value="empresa2"> BBC-3789 </option>
+                	<option value="contrato2"> BBC-3789 </option>
 				</select>
 			</div><br>
 		</div>
@@ -204,20 +204,37 @@ $equipo3->tipo = "Laptop";
 			<div class="col-md-3">
 				<input
 					class="border-success"
-					id="funciones"
-					name="funciones"
+					id="funcion"
+					name="funcion"
 					type="text"
-					placeholder=" Funciones"
-					value="{{old ('funciones')}}"
+					placeholder=" Coloca tus funciones"
+					value="{{old ('funcion')}}"
 				/>
 			</div>
 		</div>
 		<br>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header" name="datos_solicitante">
+					<h4>Servicios requeridos:</h4>
+				</div>
+			</div>
+		</nav>
+		<br>
 		<div class="row">
-			<div class="col-md-3"><strong>Servicios requeridos:</strong></div>
-			<div class="col-sm-3"><input type="checkbox" name="dir_activo" value="dir_activo"> Usuario directorio Activo</div>
-			<div class="col-sm-3"><input type="checkbox" name="ip_fija" value="ip_fija"> Ip fija</div>
-			<div class="col-sm-3"><input type="checkbox" name="internet" value="internet"> Internet</div>
+			<div class="col-md-3"><strong>Directorio activo:</strong></div>
+			<div class="col-sm-1"><input type="radio" name="dir_activo" value="si"> Sí</div>
+			<div class="col-sm-1"><input type="radio" name="dir_activo" value="no"> No</div>
+			<br>
+			<br>
+			<div class="col-md-3"><strong>IP Fija:</strong></div>
+			<div class="col-sm-1"><input type="radio" name="ip_fija" value="si"> Sí</div>
+			<div class="col-sm-1"><input type="radio" name="ip_fija" value="no"> No</div>
+			<br>
+			<br>
+			<div class="col-md-3"><strong>Internet:</strong></div>
+			<div class="col-sm-1"><input type="radio" name="internet" value="si"> Sí</div>
+			<div class="col-sm-1"><input type="radio" name="internet" value="no"> No</div>
 		</div>
 		<br>
 		<div class="row">
@@ -243,7 +260,7 @@ $equipo3->tipo = "Laptop";
 		<div class="row">
 			<div class="col-md-3"><strong>Tipo del equipo:</strong></div>
 			<div class="col-md-2">
-				<select name="equipo" id="equipo_id" required>
+				<select name="tipo_equipo" id="tipo_equipo" required>
 					<option value="equipo1"> All In One </option>
 					<option value="equipo2"> PC </option>
 					<option value="equipo3"> Laptop </option>
@@ -316,32 +333,27 @@ $equipo3->tipo = "Laptop";
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-md-3"><strong>Propiedad de la SICT:</strong></div>
-			<div class="col-sm-1"><input type="radio" name="equipo_sict" value="uda"> Sí</div>
-			<div class="col-sm-1"><input type="radio" name="equipo_propio" value="ip"> No</div>
-			<div class="col-md-3"><strong>Nombre del propietario</strong></div>
-			<div class="col-md-3"><input type="text"></div>
+			<div class="col-md-3"><strong>Propiedad de la SICT: </strong></div>
+			<div class="col-sm-1"><input type="radio" name="equipo_sict" value="si"> Sí</div>
+			<div class="col-sm-1"><input type="radio" name="equipo_sict" value="no"> No</div>
+		<br>
+			<br>
+			<div class="col-md-3"><strong>Nombre del propietario: </strong></div>
+			<div class="col-md-3"><input type="text" name="equipo_propio"></div>
 		</div>
 		<br>
 		<br>
 	</div>
 	<!--Fin del bloeque de información del usuario a registrar-->
-
+	
 	<div class="container">
-		<button class="btn btn-primary btn-lg active" type="submit">Enviar solicitud</button>
+		<div class="row">
+			<div class="col-md-6"><button class="btn btn-primary btn-lg active" type="submit">Enviar solicitud</button></div>
+			<div class="col-md-6"><button class="btn btn-secundary btn-lg active" type="submit" href="{{ URL::to('/solicitud/download-pdf') }}" > Previsualizar solicitud </button></div>
+		</div>
 	</div>
-	<br>
-	<br>
-	<div class="container">
-		<button 
-			href="{{ URL::to('/solicitud/download-pdf') }}" 
-			class="btn btn-secundary btn-lg active" 
-			type="submit"
-		>
-		Previsualizar solicitud
-		</button>
-	</div>
-	<br>
-	<br>
 </form>
+<br>
+<br>
+
 @endsection
