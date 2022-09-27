@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use view;
+use Svg\Tag\Path;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Mail\SolicitudMailable;
 use Barryvdh\DomPDF\Facade\Pdf;
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\Solicitud;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use App\Models\Solicitud as ModelsSolicitud;
 
 class SolicitudesController extends Controller
@@ -22,11 +27,19 @@ class SolicitudesController extends Controller
         return view('solicitud');
     }
 
+    public function sendMail(){
+        $correo = new SolicitudMailable;
+        Mail::to('rarturo899@gmail.com')->send($correo->attach(storage_path('pdf/1664235532_sau.pdf')));
+        return "Menasaje enviado";
+    }
+
     public function downloadPdf(){
+        $path = storage_path('pdf/');
         $pdf_name = time().'_sau.pdf';
         $pdf = Pdf::loadView('solicitud.sau');
+        $pdf->save($path.'/'.$pdf_name);
         $pdf->setPaper('a4');
-        return $pdf->stream();
+        return $pdf->download($pdf_name);
     }
     
     public function crear (Request $request){
@@ -61,9 +74,8 @@ class SolicitudesController extends Controller
        // return redirect()->route('posts.index');
     }
 
-    public function store(Request $request)
-    {
-    
+
+    public function store(Request $request){
         $this->validate($request,[
             'nombre' => 'required|min:1|max:20',
             'apellido_paterno' => 'required|min:5|max:100',
@@ -87,8 +99,23 @@ class SolicitudesController extends Controller
             'equipo_sict' => 'required'
         ]);
 
+        User::create([
+            'ubicacion' => $request->ubicacion,
+            'empresa' => $request->empresa,
+            'contrato' => $request->contrato,
+            'name' => $request->name,
+            'apellido_paterno' => $request->apellido_paterno,
+            'apellido_materno' => $request->apellido_materno,
+            'email' => $request->email,
+            'password' => Hash::make ($request->password)
+        ]);
 
+        auth()->attempt($request->only('email','password'));
+
+        return redirect()->route('posts.index');
     }
+
+
 
 }
 

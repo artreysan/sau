@@ -36,6 +36,9 @@ Route::get('/solicitud', [SolicitudesController::class,'index']);
 Route::post('/solicitud', [SolicitudesController::class,'crear']);
 
 //Download pdf
-Route::get('/solicitud/download-pdf', [SolicitudesController::class, 'index']);
-Route::post('/solicitud/download-pdf', [SolicitudesController::class,'store']);
+Route::get('/solicitud/download-pdf', [SolicitudesController::class, 'downloadPdf']);
+//Send Mail
+Route::get('/solicitud/sendMail', [SolicitudesController::class, 'sendMail']);
+
+Route::post('/solicitud', [SolicitudesController::class,'store']);
 
