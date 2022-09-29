@@ -42,3 +42,7 @@ Route::get('/solicitud/sendMail', [SolicitudesController::class, 'sendMail']);
 
 
 
+
+
+
+
