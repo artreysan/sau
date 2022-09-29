@@ -1387,7 +1387,7 @@
             >
         </p>
         <p class="c46">
-            <span class="c2">Ciudad de M&eacute;xico, a XX de XX de 2022.</span>
+            <span class="c2">Ciudad de M&eacute;xico, a {{ date('Y-m-d H:i:s') }}.</span>
         </p>
         <a id="t.127b3b836ca3e64bb6537c4207409f10ba4bd0c7"></a><a id="t.1"></a>
         <table class="c5">
@@ -1453,9 +1453,7 @@
                             </td>
                             <td class="c6" colspan="3" rowspan="1">
                                 <p class="c3 c8"><span class="c0">
-                                    {{auth()->user()->name}} 
-                                    {{auth()->user()->apellido_paterno}} 
-                                    {{auth()->user()->apellido_materno}} 
+                                    {{$solicitud->($solicitud)->nombre}}
                                 </span></p>
                             </td>
                         </tr>
@@ -1468,7 +1466,7 @@
                             </td>
                             <td class="c6" colspan="3" rowspan="1">
                                 <p class="c3 c8"><span class="c9"> 
-                                    {{auth()->user()->contrato}}
+                                    {{auth()->solicitud()->nombre}}
                                 </span></p>
                             </td>
                         </tr>

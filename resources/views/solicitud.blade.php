@@ -68,7 +68,6 @@ $equipo3 = new equipo;
 $equipo3->tipo = "Laptop";
 
 ?>
-
 <form action="/solicitud" method="POST">
     @csrf
 	<br>
@@ -203,7 +202,7 @@ $equipo3->tipo = "Laptop";
 			<div class="col-md-3"><strong>Funciones:</strong></div>
 			<div class="col-md-3">
 				<input
-					class="border-success"
+					class="border border-success"
 					id="funcion"
 					name="funcion"
 					type="text"
@@ -349,7 +348,6 @@ $equipo3->tipo = "Laptop";
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6"><button class="btn btn-primary btn-lg active" type="submit">Enviar solicitud</button></div>
-			<div class="col-md-6"><button class="btn btn-secundary btn-lg active" type="submit" href="{{ URL::to('/solicitud/download-pdf') }}" > Previsualizar solicitud </button></div>
 		</div>
 	</div>
 </form>

@@ -34,6 +34,7 @@ class SolicitudesController extends Controller
     }
 
     public function downloadPdf(){
+
         $path = storage_path('pdf/');
         $pdf_name = time().'_sau.pdf';
         $pdf = Pdf::loadView('solicitud.sau');
@@ -42,6 +43,8 @@ class SolicitudesController extends Controller
         return $pdf->download($pdf_name);
     }
     
+
+    //Funcion para almacenar con ORM datos a la base de datos
     public function crear (Request $request){
         //return $request->all();
         $solicitud = new  ModelsSolicitud();

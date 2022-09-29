@@ -40,5 +40,5 @@ Route::get('/solicitud/download-pdf', [SolicitudesController::class, 'downloadPd
 //Send Mail
 Route::get('/solicitud/sendMail', [SolicitudesController::class, 'sendMail']);
 
-Route::post('/solicitud', [SolicitudesController::class,'store']);
+
 

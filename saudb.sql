@@ -1,5 +1,4 @@
 #Autorizador#
-
 INSERT INTO `authorizers`(`id`, `nombre`, `puesto`) VALUES (NULL,'Ing. Mario César Herrera González','Director Coordinador de Innovación y Desarrollo Tecnológico');
 INSERT INTO `authorizers`(`id`, `nombre`, `puesto`) VALUES (NULL,'Ing. José Antonio Rulfo Zaragoza','Director de Desarrollo Tecnológico');
 INSERT INTO `authorizers`(`id`, `nombre`, `puesto`) VALUES (NULL,'Mtra. Edna Patricia Santiago Vargas','Subdirectora de Sistemas Administrativos');
@@ -13,5 +12,6 @@ INSERT INTO `enterprises`(`id`, `nombre`, `contrato`) VALUES (NULL,'Electronica 
 
 
 #Ubicacion#
-INSERT INTO `locations`(`id`, `nombre`) VALUES (NULL,'Av. Insurgentes Sur 1089, Col. Nochebuena, Benito Juárez, 3720, CDMX. Piso 8');
-INSERT INTO `locations`(`id`, `nombre`) VALUES (NULL,'Av. Insurgentes Sur 1089, Col. Nochebuena, Benito Juárez, 3720, CDMX. Piso 9');
+INSERT INTO `locations`(`id`, `ubicacion`) VALUES (NULL,'Av. Insurgentes Sur 1089, Col. Nochebuena, Benito Juárez, 3720, CDMX. Piso 8');
+INSERT INTO `locations`(`id`, `ubicacion`) VALUES (NULL,'Av. Insurgentes Sur 1089, Col. Nochebuena, Benito Juárez, 3720, CDMX. Piso 9');
+
