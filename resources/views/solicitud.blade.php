@@ -68,12 +68,8 @@ $equipo3 = new equipo;
 $equipo3->tipo = "Laptop";
 
 ?>
-<<<<<<< HEAD
 
-<form action="{{ url('/solicitud/save') }}" method="POST">
-=======
-<form action="/solicitud" method="POST">
->>>>>>> origin/main
+<form action="/solicitud/save" method="POST">
     @csrf
 	<br>
 	<br>
@@ -352,23 +348,22 @@ $equipo3->tipo = "Laptop";
 	
 	<div class="container">
 		<div class="row">
-<<<<<<< HEAD
 			<div class="col-md-6">
 				<input class="btn btn-primary btn-lg active" 
 				type="submit"
 				value="Enviar solicitud">
 			</div>	
 			<div class="col-md-5">
+				<!--
 				<a href="{{ url('/solicitud/download-pdf') }}" target="_blank" >
 					<button class="btn btn-secundary btn-lg active" type="button"   
 						value=""> 
 						Previsualizar solicitud
 					</button>
 				</a>
+				-->
 			</div>
-=======
-			<div class="col-md-6"><button class="btn btn-primary btn-lg active" type="submit">Enviar solicitud</button></div>
->>>>>>> origin/main
+
 		</div>
 	</div>
 </form>

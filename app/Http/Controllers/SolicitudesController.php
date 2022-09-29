@@ -27,18 +27,20 @@ class SolicitudesController extends Controller
         return view('solicitud');
     }
 
-    public function sendMail(){
-        $solicitud = ModelsSolicitud::find(1);
+    public function sendMail($solicitud){
+
+        $this->downloadPdf($solicitud);
         $correo = new SolicitudMailable;
-        Mail::to('rarturo899@gmail.com')->send($correo->attach(storage_path('pdf/1664235532_sau.pdf')));
+        Mail::to('rarturo899@gmail.com')->send($correo->attach(storage_path('pdf/'.$solicitud->fileID.'_sau.pdf')));
         return "Menasaje enviado";
     }
 
-    public function downloadPdf(){
+    public function downloadPdf($solicitud){
 
         $path = storage_path('pdf/');
         $pdf_name = time().'_sau.pdf';
-        $pdf = Pdf::loadView('solicitud.sau');
+        $data = [$solicitud->nombre];
+        $pdf = Pdf::loadView('solicitud.sau', array('solicitud'=>$solicitud));
         $pdf->save($path.'/'.$pdf_name);
         $pdf->setPaper('a4');
         return $pdf->stream($pdf_name);
@@ -71,11 +73,11 @@ class SolicitudesController extends Controller
         $solicitud->ip_antigua = $request->ip_antigua;
         $solicitud->equipo_propio = $request->equipo_propio;
         $solicitud->equipo_sict = $request->equipo_sict;
+        $solicitud->fileID = time();
 
         $solicitud->save();
-        $this->downloadPdf();
-        $this->sendMail();        
-        
+        $this->sendMail($solicitud);        
+         
 
         return redirect()->route('post.index');
        // return redirect()->route('posts.index');
