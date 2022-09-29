@@ -68,8 +68,12 @@ $equipo3 = new equipo;
 $equipo3->tipo = "Laptop";
 
 ?>
+<<<<<<< HEAD
 
 <form action="{{ url('/solicitud/save') }}" method="POST">
+=======
+<form action="/solicitud" method="POST">
+>>>>>>> origin/main
     @csrf
 	<br>
 	<br>
@@ -203,7 +207,7 @@ $equipo3->tipo = "Laptop";
 			<div class="col-md-3"><strong>Funciones:</strong></div>
 			<div class="col-md-3">
 				<input
-					class="border-success"
+					class="border border-success"
 					id="funcion"
 					name="funcion"
 					type="text"
@@ -348,6 +352,7 @@ $equipo3->tipo = "Laptop";
 	
 	<div class="container">
 		<div class="row">
+<<<<<<< HEAD
 			<div class="col-md-6">
 				<input class="btn btn-primary btn-lg active" 
 				type="submit"
@@ -361,6 +366,9 @@ $equipo3->tipo = "Laptop";
 					</button>
 				</a>
 			</div>
+=======
+			<div class="col-md-6"><button class="btn btn-primary btn-lg active" type="submit">Enviar solicitud</button></div>
+>>>>>>> origin/main
 		</div>
 	</div>
 </form>

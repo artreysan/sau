@@ -46,7 +46,7 @@
         <li>
             <a data-toggle="tab" href="#tab-02">Concluidas</a>
         </li>
-      </ul>
+      </ul>    
       <div class="tab-content">
         <div class="tab-pane active" id="tab-01">
             <table class="table">
@@ -57,7 +57,7 @@
                     <th scope="col">Colaborador</th>
                     <th scope="col">Autorizador</th>
                     <th scope="col">Status</th>
-                  </tr>
+                    <th scope="col">PDF</tr>
                 </thead>
                 <tbody class="table-group-divider">
                   @foreach ($solicitud as $solicitud)
@@ -66,6 +66,8 @@
                     <td>{{$solicitud->created_at}}</td>
                     <td>{{$solicitud->nombre}} {{$solicitud->apellido_paterno}}</td>
                     <td>{{$solicitud->autorizador}}</td>
+                    <td>Activo</td>
+                    <td><button class="glyphicon glyphicon-file"></button></td>
                   </tr>
                   @endforeach
                 </tbody>
