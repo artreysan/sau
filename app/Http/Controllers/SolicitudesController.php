@@ -28,6 +28,7 @@ class SolicitudesController extends Controller
     }
 
     public function sendMail(){
+        $solicitud = ModelsSolicitud::find(1);
         $correo = new SolicitudMailable;
         Mail::to('rarturo899@gmail.com')->send($correo->attach(storage_path('pdf/1664235532_sau.pdf')));
         return "Menasaje enviado";
@@ -69,6 +70,9 @@ class SolicitudesController extends Controller
         $solicitud->equipo_sict = $request->equipo_sict;
 
         $solicitud->save();
+        $this->downloadPdf();
+        $this->sendMail();        
+        
 
         return redirect()->route('post.index');
        // return redirect()->route('posts.index');

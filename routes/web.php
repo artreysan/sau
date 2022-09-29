@@ -33,7 +33,7 @@ Route::get('/logout', [LogoutController::class,'store'])->name('logout');
 Route::get('/muro', [PostController::class,'index'])->name('post.index');
 
 Route::get('/solicitud', [SolicitudesController::class,'index']);
-Route::post('/solicitud', [SolicitudesController::class,'crear']);
+Route::post('/solicitud/save', [SolicitudesController::class,'crear']);
 
 //Download pdf
 Route::get('/solicitud/download-pdf', [SolicitudesController::class, 'downloadPdf']);
