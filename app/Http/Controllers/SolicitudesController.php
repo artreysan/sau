@@ -31,7 +31,7 @@ class SolicitudesController extends Controller
 
         $this->downloadPdf($solicitud);
         $correo = new SolicitudMailable;
-        Mail::to('rarturo899@gmail.com')->send($correo->attach(storage_path('pdf/'.$solicitud->fileID.'_sau.pdf')));
+        Mail::to($solicitud->emailSend)->send($correo->attach(storage_path('pdf/'.$solicitud->fileID.'_sau.pdf')));
         return "Menasaje enviado";
     }
 
@@ -74,6 +74,7 @@ class SolicitudesController extends Controller
         $solicitud->equipo_propio = $request->equipo_propio;
         $solicitud->equipo_sict = $request->equipo_sict;
         $solicitud->fileID = time();
+        $solicitud->emailSend = $request->emailSend;
 
         $solicitud->save();
         $this->sendMail($solicitud);        

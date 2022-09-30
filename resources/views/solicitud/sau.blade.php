@@ -1412,8 +1412,9 @@
                                 <p class="c3 c8"><span class="c2"></span></p>
                             </td>
                             <td class="c49" colspan="1" rowspan="1">
-                                <p class="c3 c8"><span class="c0">
-                                    
+                                <p class="c3 c8">
+                                    <span class="c9">
+                                {{$solicitud->autorizador}} 
                                 </span></p>
                             </td>
                         </tr>
@@ -1428,7 +1429,10 @@
                                 <p class="c3 c8"><span class="c2"></span></p>
                             </td>
                             <td class="c49" colspan="1" rowspan="1">
-                                <p class="c3 c8"><span class="c0"></span></p>
+                                <p class="c3 c8">
+                                    <span class="c0">
+                                {{$solicitud->autorizador}}    
+                                </span></p>
                             </td>
                         </tr>
                     </table>
@@ -1453,8 +1457,8 @@
                                     <span class="c2">NOMBRE COMPLETO:</span>
                                 </p>
                             </td>
-                            <td class="c" colspan="3" rowspan="1">
-                                <p class="c3 c8"><span class="c0">
+                            <td class="c45" colspan="3" rowspan="1">
+                                <p class="c3 c8"><span class="c9">
                                     {{$solicitud->nombre}}
                                     {{ $solicitud->apellido_paterno}}
                                     {{ $solicitud->apellido_materno}}
@@ -1478,11 +1482,14 @@
                             <td class="c20" colspan="1" rowspan="1">
                                 <p class="c3">
                                     <span class="c2">EMPRESA:</span>
+                                    <br>
+                                    <br>
                                 </p>
                             </td>
                             <td class="c45" colspan="1" rowspan="1">
-                                <p class="c3 c8"><span class="c9"> 
-                                    {{$solicitud->contrato}}
+                                <p class="c3 c8">
+                                    <span class="c9"> 
+                                    {{$solicitud->empresa}}
                                 </span></p>
                             </td>
                             <td class="c16" colspan="1" rowspan="1">
@@ -1501,6 +1508,8 @@
                                     <span class="c2"
                                         >UBICACI&Oacute;N EN LA SCT:</span
                                     >
+                                    <br>
+                                    <br>
                                 </p>
                             </td>
                             <td class="c6" colspan="3" rowspan="1">
@@ -1518,8 +1527,8 @@
                                 </p>
                             </td>
                             <td class="c6" colspan="3" rowspan="1">
-                                <p class="c3 c57 c8">
-                                    <span class="c0">
+                                <p class="c3 c8">
+                                    <span class="c9">
                                         {{$solicitud->funcion}}    
                                     </span>
                                 </p>
@@ -1532,8 +1541,8 @@
                                 </p>
                             </td>
                             <td class="c6" colspan="3" rowspan="1">
-                                <p class="c3 c8 c57">
-                                    <span class="c0">
+                                <p class="c3 c8">
+                                    <span class="c9">
                                         {{$solicitud->fileID}}
                                     </span>
                                 </p>
@@ -1628,9 +1637,11 @@
                                 </p>
                             </td>
                             <td class="c13" colspan="1" rowspan="1">
-                                <p class="c3 c8"><span class="c9">
+                                <p class="c3 c8">
+                                    <span class="c9">
                                     {{$solicitud->modelo}}     
-                                </span></p>
+                                </span>
+                            </p>
                             </td>
                         </tr>
                         <tr class="c30">
@@ -1638,9 +1649,11 @@
                                 <p class="c3"><span class="c2">SERIE:</span></p>
                             </td>
                             <td class="c13" colspan="1" rowspan="1">
-                                <p class="c3 c8"><span class="c0">
-                                    {{$solicitud->serie}}     
-                                </span></p>
+                                <p class="c3 c8">
+                                    <span class="c9">
+                                        {{$solicitud->serie}}     
+                                    </span>
+                                </p>
                             </td>
                         </tr>
                         <tr class="c4">
@@ -1648,9 +1661,11 @@
                                 <p class="c3"><span class="c2">MAC:</span></p>
                             </td>
                             <td class="c13" colspan="1" rowspan="1">
-                                <p class="c3 c8"><span class="c26">
+                                <p class="c3 c8">
+                                    <span class="c9">
                                     {{$solicitud->mac}}     
-                                </span></p>
+                                </span>
+                            </p>
                             </td>
                         </tr>
                         <tr class="c25">
@@ -1660,7 +1675,11 @@
                                 </p>
                             </td>
                             <td class="c13" colspan="1" rowspan="1">
-                                <p class="c3"><span class="c9">N/A</span></p>
+                                <p class="c3 c8">
+                                    <span class="c9">
+                                        {{$solicitud->ip_antigua}}
+                                    </span>
+                                </p>
                             </td>
                         </tr>
                         <tr class="c32">
@@ -1676,8 +1695,24 @@
                                 <p class="c3">
                                     <span class="c9"
                                         >SI ( &nbsp; &nbsp; ) &nbsp; &nbsp;
-                                        &nbsp;NO &nbsp;( &nbsp; &nbsp; ) NOMBRE
-                                        PROPIETARIO:
+                                        &nbsp;NO &nbsp;( &nbsp; &nbsp; ) 
+                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr class="c32">
+                            <td class="c28" colspan="1" rowspan="1">
+                                <p class="c3">
+                                    <span class="c2"
+                                        >NOMBRE PROPIETARIO: &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;</span
+                                    >
+                                </p>
+                            </td>
+                            <td class="c13" colspan="1" rowspan="1">
+                                <p class="c3 c8">
+                                    <span class="c9">
+                                        {{$solicitud->equipo_propio}}
                                     </span>
                                 </p>
                             </td>
@@ -1724,8 +1759,14 @@
                     <p class="c1">
                         <span class="c2">________________________________</span>
                     </p>
-                    <p class="c1"><span class="c0">Nombre</span></p>
-                    <p class="c1"><span class="c0">Puesto</span></p>
+                    <p class="c1"><span class="c0">
+                        {{$solicitud->nombre}}
+                        {{ $solicitud->apellido_paterno}}
+                        {{ $solicitud->apellido_materno}}
+                    </span></p>
+                    <p class="c1"><span class="c0">
+                        {{$solicitud->funcion}}    
+                    </span></p>
                 </td>
                 <td class="c27" colspan="1" rowspan="1">
                     <p class="c1 c8"><span class="c2"></span></p>
@@ -1738,8 +1779,13 @@
                             >_____________________________________</span
                         >
                     </p>
-                    <p class="c1"><span class="c0">Nombre</span></p>
-                    <p class="c1"><span class="c0">Puesto</span></p>
+                    <p class="c1"><span class="c0">
+                        {{$solicitud->autorizador}}    
+                    </span></p>
+                    <p class="c1"><span class="c0">
+                        {{$solicitud->puesto}}    
+
+                    </span></p>
                 </td>
             </tr>
         </table>

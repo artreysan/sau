@@ -51,8 +51,12 @@ class empresa {
 }
 
 $empresa1 = new empresa;
-$empresa1->nombre = "Patito S.A. de C.V";
-$empresa1->contrato = "MVC-4589";
+$empresa1->nombre = "Electronica Sacachispas S.A de C.V";
+$empresa1->contrato = "BBC-3789";
+
+$empresa2 = new empresa;
+$empresa2->nombre = "Patito S.A. de C.V";
+$empresa2->contrato = "MVC-4589";
 
 class equipo {
     public $tipo;
@@ -83,7 +87,7 @@ $equipo3->tipo = "Laptop";
 	<!--Autorizadores-->
 		<div class="container">
 			<nav class="navbar navbar-default">
-				<div class="container-fluid">
+				<div cliass="container-fluid">
 					<div class="navbar-header" name="datos_solicitante">
 						<h3>Autorizadores de la solicitud</h3>
 					</div>
@@ -94,11 +98,11 @@ $equipo3->tipo = "Laptop";
 				<div class="col-md-4"><strong>Nombre del director o subdiector:</strong></div>
 				<div class="col-md-8">
 					<select name="autorizador" id="auto_id" required>
-						<option value="$autorizador1">Ing. Mario César Herrera González</option>
-						<option value="autorizador2">Ing. José Antonio Rulfo Zaragoza</option>
-						<option value="autorizador3">Mtra. Edna Patricia Santiago Vargas</option>
-						<option value="autorizador4">Subdirector de Innovación Tecnológica</option>
-						<option value="autorizador5">Subdirectora de Adminsitración de Portales</option>
+						<option value="{{$autorizador1->nombre}}">{{$autorizador1->nombre}}</option>
+						<option value="{{$autorizador2->nombre}}">{{$autorizador2->nombre}}</option>
+						<option value="{{$autorizador3->nombre}}">{{$autorizador3->nombre}}</option>
+						<option value="{{$autorizador4->nombre}}">{{$autorizador4->nombre}}</option>
+						<option value="{{$autorizador5->nombre}}">{{$autorizador5->nombre}}</option>
 					</select>
 				</div>
 			</div>
@@ -107,21 +111,15 @@ $equipo3->tipo = "Laptop";
 				<div class="col-md-4"><strong>Dirección o subdireción:</strong></div>
 				<div class="col-md-8">
 					<select name="puesto" id="puesto_id" required>
-						<option value="puesto1">Director Coordinador de Innovación y Desarrollo Tecnológico</option>
-						<option value="puesto2">Director de Desarrollo Tecnológico</option>
-						<option value="puesto3">Subdirectora de Sistemas Administrativos</option>
-						<option value="puesto4">Ing. David de León Muñoz</option>
-						<option value="puesto5">Ing. Iracema Mirón Ramírez</option>
+						<option value="{{$autorizador2->puesto}}">{{$autorizador2->puesto}}</option>
+						<option value="{{$autorizador3->puesto}}">{{$autorizador3->puesto}}</option>
+						<option value="{{$autorizador4->puesto}}">{{$autorizador4->puesto}}</option>
+						<option value="{{$autorizador5->puesto}}">{{$autorizador5->puesto}}</option>
 					</select>
 				</div>
 			</div>
 	</div>
 	<br>
-	<br>
-	<!--Fin del bloque de los Autorizadores-->
-
-
-
 	<!--Información del usuario a registrar-->
 	<div class="container">
 		<nav class="navbar navbar-default">
@@ -173,11 +171,27 @@ $equipo3->tipo = "Laptop";
 		</div>
 		<br>
 		<div class="row">
+			<div class="col-md-3"><strong>Correo electronico:</strong></div>
+			<div class="col-md-3">
+				<input
+                	class="border border-success"
+                	id="emailSend"
+                	name="emailSend"
+                	type="text"
+                	placeholder=" Correo Electronico "
+                	value="{{old ('emailSend')}}"
+                />
+			</div>
+			<br>
+		</div>	
+
+		<br>
+		<div class="row">
 			<div class="col-md-3"><strong>Ubicación en la SICT:</strong></div>
 			<div class="col-md-3">
 				<select name="direccion" id="direccion" required>
-					<option value="ubicacion1"> Av. Insurgentes Sur 1089, Col. Nochebuena, Benito Juárez, 3720, CDMX. Piso 8 </option>
-					<option value="ubicacion2"> Av. Insurgentes Sur 1089, Col. Nochebuena, Benito Juárez, 3720, CDMX. Piso 9 </option>
+					<option value="{{$ubicacion1->ubicacion}}"> {{$ubicacion1->ubicacion}}</option>
+					<option value="{{$ubicacion2->ubicacion}}"> {{$ubicacion2->ubicacion}}</option>
 				</select>
 			</div>
 		</div>
@@ -186,15 +200,15 @@ $equipo3->tipo = "Laptop";
 			<div class="col-md-3"><strong>Empresa:</strong></div>
 			<div class="col-md-4">
 				<select name="empresa" id="empresa" required>
-					<option value="empresa1"> Electronica Sacachispas S.A de C.V </option>
-                	<option value="empresa2"> Patito S.A. de C.V </option>
+					<option value="{{$empresa1->nombre}}">{{$empresa1->nombre}}</option>
+					<option value="{{$empresa2->nombre}}">{{$empresa2->nombre}}</option>
 				</select>
 			</div>
 			<div class="col-md-2"><strong>Contrato</strong></div>
 			<div class="col-md-2">
 				<select name="contrato" id="contrato" required>
-					<option value="contrato1"> MVC-4589 </option>
-                	<option value="contrato2"> BBC-3789 </option>
+					<option value="{{$empresa1->contrato}}">{{$empresa1->contrato}}</option>
+					<option value="{{$empresa2->contrato}}">{{$empresa2->contrato}}</option>
 				</select>
 			</div><br>
 		</div>
@@ -223,17 +237,17 @@ $equipo3->tipo = "Laptop";
 		<br>
 		<div class="row">
 			<div class="col-md-3"><strong>Directorio activo:</strong></div>
-			<div class="col-sm-1"><input type="radio" name="dir_activo" value="si"> Sí</div>
+			<div class="col-sm-1"><input type="radio" name="dir_activo" value="si" checked> Sí</div>
 			<div class="col-sm-1"><input type="radio" name="dir_activo" value="no"> No</div>
 			<br>
 			<br>
 			<div class="col-md-3"><strong>IP Fija:</strong></div>
-			<div class="col-sm-1"><input type="radio" name="ip_fija" value="si"> Sí</div>
+			<div class="col-sm-1"><input type="radio" name="ip_fija" value="si" checked> Sí</div>
 			<div class="col-sm-1"><input type="radio" name="ip_fija" value="no"> No</div>
 			<br>
 			<br>
 			<div class="col-md-3"><strong>Internet:</strong></div>
-			<div class="col-sm-1"><input type="radio" name="internet" value="si"> Sí</div>
+			<div class="col-sm-1"><input type="radio" name="internet" value="si" checked> Sí</div>
 			<div class="col-sm-1"><input type="radio" name="internet" value="no"> No</div>
 		</div>
 		<br>
@@ -261,9 +275,9 @@ $equipo3->tipo = "Laptop";
 			<div class="col-md-3"><strong>Tipo del equipo:</strong></div>
 			<div class="col-md-2">
 				<select name="tipo_equipo" id="tipo_equipo" required>
-					<option value="equipo1"> All In One </option>
-					<option value="equipo2"> PC </option>
-					<option value="equipo3"> Laptop </option>
+					<option value="{{$equipo1->tipo}}"> {{$equipo1->tipo}}</option>
+					<option value="{{$equipo2->tipo}}"> {{$equipo2->tipo}}</option>
+					<option value="{{$equipo3->tipo}}"> {{$equipo3->tipo}}</option>
 				</select>
 			</div>
 		</div>
@@ -335,7 +349,7 @@ $equipo3->tipo = "Laptop";
 		<div class="row">
 			<div class="col-md-3"><strong>Propiedad de la SICT: </strong></div>
 			<div class="col-sm-1"><input type="radio" name="equipo_sict" value="si"> Sí</div>
-			<div class="col-sm-1"><input type="radio" name="equipo_sict" value="no"> No</div>
+			<div class="col-sm-1"><input type="radio" name="equipo_sict" value="no" checked> No</div>
 		<br>
 			<br>
 			<div class="col-md-3"><strong>Nombre del propietario: </strong></div>

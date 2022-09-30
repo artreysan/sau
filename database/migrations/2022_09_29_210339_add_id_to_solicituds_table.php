@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::table('solicituds', function (Blueprint $table) {
             $table->string('fileID')->nullable();
+            $table->string('emailSend')->after('apellido_materno');
         });
     }
 
@@ -27,6 +28,7 @@ return new class extends Migration
     {
         Schema::table('solicituds', function (Blueprint $table) {
             $table->string('fileID');
+            $table->string('emailSend');
             //
         });
     }

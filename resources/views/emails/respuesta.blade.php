@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Respuesta</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('titulo')
+
+@endsection
+
+@section('contenido')
     <h1>Respuesta de Solicitud</h1>
-    <p> Pdf</p>
-</body>
-</html>
+    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, harum! Tenetur omnis inventore illum enim iure consectetur, ratione sequi dolor reprehenderit ipsa aut pariatur placeat veniam dicta eligendi ut tempore fugiat, minus amet voluptate? Accusantium sapiente vitae recusandae odio est? Rem quasi sapiente ea itaque dolorem, a cum consequuntur voluptas vero? Vitae, nam aspernatur et quidem perferendis distinctio quisquam doloribus aut quae! Nesciunt itaque quidem, ea, accusantium ducimus rem odit ad dignissimos sapiente assumenda rerum porro enim. Totam, quisquam odit. Asperiores eligendi id pariatur inventore perferendis nesciunt totam dicta vero modi, excepturi soluta aliquam explicabo impedit ea exercitationem rem cupiditate dolores? Facilis corrupti accusantium sequi suscipit veritatis aliquam itaque mollitia molestias, culpa sed amet necessitatibus aperiam velit aut perferendis illo. Provident aut tempore ut ea, dicta officia placeat ipsa vel nesciunt! Adipisci fuga neque ab error autem necessitatibus ducimus, omnis aspernatur libero cumque molestias fugiat doloremque quibusdam pariatur natus nesciunt a fugit ad nostrum vel voluptates perspiciatis. Minus, sint voluptate illum nesciunt quia libero architecto eligendi voluptatem maxime dignissimos odio perferendis reprehenderit odit, excepturi optio. Nostrum delectus impedit, voluptate, fugiat dicta, quisquam esse doloribus ad minus non ipsum rem placeat. Odit soluta quo officiis provident qui esse architecto eaque amet saepe? Dolorem corporis molestiae facilis error totam tempora sed, odit nisi recusandae labore illo placeat quibusdam a iusto minima. Architecto, corporis veritatis placeat aliquid maiores veniam necessitatibus recusandae praesentium pariatur blanditiis quasi perspiciatis sequi explicabo laboriosam voluptatibus exercitationem corrupti sed optio eaque quo voluptates natus rem? Praesentium perspiciatis tenetur omnis iure dignissimos at excepturi itaque laboriosam vel? Voluptatibus voluptates laboriosam quas! Adipisci, inventore. Ut non quia commodi voluptates nemo nesciunt quam a. Velit praesentium illo quas eius odio ut? Perferendis corrupti, voluptatum excepturi accusamus architecto doloribus minus magnam quam eos ipsam odio dicta doloremque quisquam enim amet vel quas repellat.</p>
+@endsection
