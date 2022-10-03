@@ -14,7 +14,7 @@ class Solicitud extends Model
     protected $table = 'solicituds';
 
     protected $fillable = [
-        'nombre' ,
+        'nombre',
         'apellido_paterno',
         'apellido_materno',
         'autorizador',
@@ -34,7 +34,6 @@ class Solicitud extends Model
         'ip_antigua',
         'equipo_propio',
         'equipo_sict'
-
     ];
 
     // public function solicituds (){

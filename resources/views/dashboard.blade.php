@@ -33,7 +33,8 @@
     <div class="row">
         <div class="col-md-2"><h5>Nueva solicitud</h5></div>
         <div class="col-md-1">
-            <a href="{{ url('/solicitud') }}"><button class="btn btn-default glyphicon glyphicon-plus-sign"type="button"></button> </a>
+            <a href="{{ url('/solicitud') }}">
+              <button class="btn btn-default glyphicon glyphicon-plus-sign"type="button"></button> </a>
         </div>
     </div>
     <br>
