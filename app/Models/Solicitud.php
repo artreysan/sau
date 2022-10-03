@@ -12,6 +12,7 @@ class Solicitud extends Model
     use HasFactory;
 
     protected $table = 'solicituds';
+
     protected $fillable = [
         'nombre' ,
         'apellido_paterno',
@@ -35,4 +36,8 @@ class Solicitud extends Model
         'equipo_sict'
 
     ];
+
+    // public function solicituds (){
+    //     return $this->hasMany('App\')
+    // }
 }

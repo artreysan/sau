@@ -56,28 +56,36 @@
                     <th scope="col">Colaborador</th>
                     <th scope="col">Autorizador</th>
                     <th scope="col">Status</th>
-                    <th scope="col">PDF</tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></tr>
                 </thead>
                 <tbody class="table-group-divider">
                   @foreach ($solicitud as $solicitud)
                   <tr>
-                    <th scope="row">{{$solicitud->id}}</th>
+                    <td>{{$solicitud->id}}</td>
                     <td>{{$solicitud->created_at}}</td>
                     <td>{{$solicitud->nombre}} {{$solicitud->apellido_paterno}}</td>
                     <td>{{$solicitud->autorizador}}</td>
                     <td>Activo</td>
                     <td><button class="glyphicon glyphicon-file"></button></td>
+                    <td> 
+                      <li class="dropdown">
+                        <button class="icon-caret-down" href="#" data-toggle="dropdown"></button>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Revisar</a></li>
+                            <li><a href="#">Editar</a></li>
+                          </ul>
+                    </li>
+                    </td>
                   </tr>
                   @endforeach
                 </tbody>
               </table>
-
-
         </div>
         <br>
-        <div class="tab-pane" id="tab-01">...</div>
-        <div class="tab-pane" id="tab-02">...</div>
-        <div class="tab-pane" id="tab-03">...</div>
+        <div class="tab-pane" id="tab-01"></div>
+        <div class="tab-pane" id="tab-02"></div>
       </div>
       <br>
       <br>
