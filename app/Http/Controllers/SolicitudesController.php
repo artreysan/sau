@@ -28,15 +28,15 @@ class SolicitudesController extends Controller
     }
 
     public function sendMail($solicitud){
-
         $this->downloadPdf($solicitud);
         $correo = new SolicitudMailable;
         Mail::to($solicitud->emailSend)->send($correo->attach(storage_path('pdf/'.$solicitud->fileID.'_sau.pdf')));
         return "Menasaje enviado";
     }
+    
 
+    
     public function downloadPdf($solicitud){
-
         $path = storage_path('pdf/');
         $pdf_name = time().'_sau.pdf';
         $data = [$solicitud->nombre];
@@ -44,6 +44,10 @@ class SolicitudesController extends Controller
         $pdf->save($path.'/'.$pdf_name);
         $pdf->setPaper('a4');
         return $pdf->stream($pdf_name);
+    }
+    public function streamPDF( $fileID){
+        
+        return response()->file(storage_path('pdf/'.$fileID.'_sau.pdf'));
     }
     
 

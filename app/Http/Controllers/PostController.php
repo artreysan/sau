@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Solicitud;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use view;
@@ -20,4 +21,7 @@ class PostController extends Controller
         $solicitud = Solicitud::all();
         return view('dashboard', compact('solicitud'));
     }
+    
+    
+
 }

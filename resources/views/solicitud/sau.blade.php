@@ -1430,8 +1430,8 @@
                             </td>
                             <td class="c49" colspan="1" rowspan="1">
                                 <p class="c3 c8">
-                                    <span class="c0">
-                                {{$solicitud->autorizador}}    
+                                    <span class="c9">
+                                {{$solicitud->puesto}}    
                                 </span></p>
                             </td>
                         </tr>

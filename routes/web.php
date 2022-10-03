@@ -37,6 +37,10 @@ Route::post('/solicitud/save', [SolicitudesController::class,'crear']);
 
 //Download pdf
 Route::get('/solicitud/download-pdf', [SolicitudesController::class, 'downloadPdf']);
+
+Route::get('/muro/stream-pdf/{fileID}', [SolicitudesController::class, 'streamPDF']);
+
+
 //Send Mail
 Route::get('/solicitud/sendMail', [SolicitudesController::class, 'sendMail']);
 

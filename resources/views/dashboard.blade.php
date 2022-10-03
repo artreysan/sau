@@ -64,12 +64,19 @@
                 <tbody class="table-group-divider">
                   @foreach ($solicitud as $solicitud)
                   <tr>
-                    <td>{{$solicitud->id}}</td>
+
+                    <th scope="row">{{$solicitud->fileID}}</th>
                     <td>{{$solicitud->created_at}}</td>
                     <td>{{$solicitud->nombre}} {{$solicitud->apellido_paterno}}</td>
                     <td>{{$solicitud->autorizador}}</td>
                     <td>Activo</td>
-                    <td><button class="glyphicon glyphicon-file"></button></td>
+                    <td>
+                      <a type="POST" href="{{url('/muro/stream-pdf/'.$solicitud->fileID)}}" target="_blank">
+                      <button class="glyphicon glyphicon-file">
+                        </button>
+                      </a>
+                    </td>
+
                     <td> 
                       <li class="dropdown">
                         <button class="icon-caret-down" href="#" data-toggle="dropdown"></button>
@@ -78,7 +85,7 @@
                             <li><a href="#">Editar</a></li>
                           </ul>
                     </li>
-                    </td>
+                    
                   </tr>
                   @endforeach
                 </tbody>
