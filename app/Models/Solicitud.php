@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Solicitud extends Model
 {
-
     
     use HasFactory;
 
@@ -33,10 +32,13 @@ class Solicitud extends Model
         'mac',
         'ip_antigua',
         'equipo_propio',
-        'equipo_sict'
+        'equipo_sict',
+        'fileID',
+        'emailSend'
     ];
 
-    // public function solicituds (){
-    //     return $this->hasMany('App\')
-    // }
+    //Relacion one to Many 
+    public function records (){
+        return $this->hasMany('App\Record');
+    }
 }
