@@ -37,7 +37,7 @@
         </div>
         <div class="col-md-2">
           <button class="btn btn-primary" type="button">
-            Ejemplo
+            Buscar Solicitud
             <span class="glyphicon glyphicon-search"></span>
           </button>
         </div>
@@ -72,9 +72,7 @@
                     <td>{{$solicitud->nombre}} {{$solicitud->apellido_paterno}}</td>
                     <td>{{$solicitud->autorizador}}</td>
                     <td>Activo</td>
-                    <td>
-                      <li class="dropdown">
-                        <button class="glyphicon glyphicon-folder-open" data-toggle="dropdown"></button>
+                    <td><li class="dropdown"><button class="glyphicon glyphicon-folder-open" data-toggle="dropdown"></button>
                           <ul class="dropdown-menu" role="menu">
                             <li><a href="#">Revisar</a></li>
                             <li><a href="{{url('/editar')}}">Editar</a></li>
