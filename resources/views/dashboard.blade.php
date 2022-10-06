@@ -31,10 +31,15 @@
 <br>
 <div class="container">
     <div class="row">
-        <div class="col-md-2"><h5>Nueva solicitud</h5></div>
-        <div class="col-md-1">
+        <div class="col-md-2">
             <a href="{{ url('/solicitud') }}">
-              <button class="btn btn-default glyphicon glyphicon-plus-sign"type="button"></button> </a>
+              <button class="btn btn-default glyphicon glyphicon-plus-sign"type="button"> Solicitud </button></a>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-primary" type="button">
+            Buscar Solicitud
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
         </div>
     </div>
     <br>
@@ -57,39 +62,37 @@
                     <th scope="col">Colaborador</th>
                     <th scope="col">Autorizador</th>
                     <th scope="col">Status</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></tr>
+                    <th scope="col">Detalles</th>
                 </thead>
                 <tbody class="table-group-divider">
                   @foreach ($solicitud as $solicitud)
                   <tr>
-
                     <th scope="row">{{$solicitud->fileID}}</th>
                     <td>{{$solicitud->created_at}}</td>
                     <td>{{$solicitud->nombre}} {{$solicitud->apellido_paterno}}</td>
                     <td>{{$solicitud->autorizador}}</td>
                     <td>Activo</td>
-                    <td>
-                      <a type="POST" href="{{url('/muro/stream-pdf/'.$solicitud->fileID)}}" target="_blank">
-                      <button class="glyphicon glyphicon-file">
-                        </button>
-                      </a>
-                    </td>
-
-                    <td> 
-                      <li class="dropdown">
-                        <button class="icon-caret-down" href="#" data-toggle="dropdown"></button>
+                    <td><li class="dropdown"><button class="glyphicon glyphicon-folder-open" data-toggle="dropdown"></button>
                           <ul class="dropdown-menu" role="menu">
                             <li><a href="#">Revisar</a></li>
-                            <li><a href="#">Editar</a></li>
+                            <li><a href="{{url('/editar')}}">Editar</a></li>
+                            <li><a href="{{url('/muro/stream-pdf/'.$solicitud->fileID)}}" target="_blank">Generar PDF</a></li>
                           </ul>
                     </li>
-                    
+                    </td>                
                   </tr>
                   @endforeach
                 </tbody>
               </table>
+              <ul class="pagination">
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+              </ul>
         </div>
         <br>
         <div class="tab-pane" id="tab-01"></div>

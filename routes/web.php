@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EditarSolicitudController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
@@ -34,6 +35,9 @@ Route::get('/muro', [PostController::class,'index'])->name('post.index');
 
 Route::get('/solicitud', [SolicitudesController::class,'index']);
 Route::post('/solicitud/save', [SolicitudesController::class,'crear']);
+
+//Ruta pendiente para editar solicitud
+Route::get('/editar', [EditarSolicitudController::class,'index']);
 
 //Download pdf
 Route::get('/solicitud/download-pdf', [SolicitudesController::class, 'downloadPdf']);

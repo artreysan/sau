@@ -8,7 +8,6 @@
 
 <?php
 
-
 class autorizador {
     public $nombre;
     public $puesto;
@@ -72,28 +71,7 @@ $equipo3 = new equipo;
 $equipo3->tipo = "Laptop";
 
 ?>
-<nav class="navbar navbar-inverse sub-navbar navbar-fixed-top">
-	<div class="container">
-	  <div class="collapse navbar-collapse" id="subenlaces">
-		<ul class="nav navbar-nav navbar-right">
-		  <li><a href="/muro">{{auth()->user()->name}} {{auth()->user()->apellido_paterno}} {{auth()->user()->apellido_materno}}</a></li>
-		  <li class="dropdown">
-			<a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></a>
-			<ul class="dropdown-menu" role="menu">
-			  <li><a href="#"></a></li>
-			  <li><a href="#">Algo</a></li>
-			  <li><a href="#">Algo más aquí</a></li>
-			  <li class="divider"></li>
-			  <li><a href="{{route('logout')}}">Cerrar sesión</a></li>
-			</ul>
-		  </li>
-		</ul>
-	  </div>
-	</div>
-  </nav>
-  <br>
-  <br>
-  <br>
+
 <form action="/solicitud/save" method="POST">
     @csrf
 	<br>
@@ -375,7 +353,6 @@ $equipo3->tipo = "Laptop";
 			<div class="col-sm-1"><input type="radio" name="equipo_sict" value="si"> Sí</div>
 			<div class="col-sm-1"><input type="radio" name="equipo_sict" value="no" checked> No</div>
 		<br>
-		
 			<br>
 			<div class="col-md-3"><strong>Nombre del propietario: </strong></div>
 			<div class="col-md-3"><input type="text" name="equipo_propio"></div>

@@ -44,8 +44,8 @@ class SolicitudesController extends Controller
         $pdf->setPaper('a4');
         return $pdf->stream($pdf_name);
     }
+
     public function streamPDF( $fileID){
-        
         return response()->file(storage_path('pdf/'.$fileID.'_sau.pdf'));
     }
     
