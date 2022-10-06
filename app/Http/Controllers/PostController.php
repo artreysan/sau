@@ -16,8 +16,7 @@ class PostController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
-    {
+    public function index(){
         $solicitud = Solicitud::all();
         return view('dashboard', compact('solicitud'));
     }

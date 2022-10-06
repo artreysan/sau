@@ -1564,15 +1564,20 @@
                                     </ul>
                                 @endif
                                 @if($solicitud->ip_fija=='si')  
-                                    <p class="c8 c22"><span class="c9"></span></p>
                                     <ul class="c29 ">
                                         <li class="c17 li-bullet-0">
                                             <span class="c0">Ip Fija</span>
                                         </li>
                                     </ul>
                                 @endif
+                                @if($solicitud->internet =='si')  
+                                    <ul class="c29 ">
+                                        <li class="c17 li-bullet-0">
+                                            <span class="c0">Internet</span>
+                                        </li>
+                                    </ul>
+                                @endif
                                 @if($solicitud->ip_fija=='si')  
-                                    <p class="c22 c8"><span class="c0"></span></p>
                                     <ul class="c29 ">
                                         <li class="c17 li-bullet-0">
                                             <span class="c0"
@@ -1580,9 +1585,6 @@
                                             >
                                         </li>
                                     </ul>
-                                    <p class="c3 c8 c56">
-                                        <span class="c0"></span>
-                                    </p>
                                     <ul class="c29 lst-kix_list_7-1 start">
                                         <li class="c12 li-bullet-0">
                                             <span class="c0">

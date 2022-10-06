@@ -152,6 +152,22 @@ $equipo3->tipo = "Laptop";
 		</nav>
 		<br>
 		<div class="row">
+			<div class="col-md-3"><strong>Nombre(s):</strong></div>
+			<div class="col-md-3">
+				<input
+                	class="border border-success"
+                	id="nombre"
+                	name="nombre"
+                	type="text"
+                	placeholder=" Tu nombre "
+                	value="{{old ('nombre')}}"
+					required
+                />
+			</div>
+			<br>
+		</div>
+		<br>
+		<div class="row">
 			<div class="col-md-3"><strong>Apellido paterno:</strong></div>
 			<div class="col-md-3">
 				<input
@@ -160,8 +176,9 @@ $equipo3->tipo = "Laptop";
 					name="apellido_paterno"
 					type="text"
 					placeholder=" Tu apellido paterno "
-					value="{{old ('apellido_paterno')}}"
-					/>
+					value="{{old ('apellido_paterno')}}" 
+					required
+				/>
 			</div>
 			<div class="col-md-3"><strong>Apellido materno:</strong></div>
 			<div class="col-md-3">
@@ -172,25 +189,12 @@ $equipo3->tipo = "Laptop";
 					type="text"
 					placeholder=" Tu apellido materno "
 					value="{{old ('apellido_materno')}}"
+					required
 				/>
 			</div>
 		</div>
 		<br>
-		<div class="row">
-			<div class="col-md-3"><strong>Nombre(s):</strong></div>
-			<div class="col-md-3">
-				<input
-                	class="border border-success"
-                	id="nombre"
-                	name="nombre"
-                	type="text"
-                	placeholder=" Tu nombre "
-                	value="{{old ('nombre')}}"
-                />
-			</div>
-			<br>
-		</div>
-		<br>
+		
 		<div class="row">
 			<div class="col-md-3"><strong>Correo electronico:</strong></div>
 			<div class="col-md-3">
@@ -201,6 +205,7 @@ $equipo3->tipo = "Laptop";
                 	type="text"
                 	placeholder=" Correo Electronico "
                 	value="{{old ('emailSend')}}"
+					required
                 />
 			</div>
 			<br>
@@ -244,6 +249,7 @@ $equipo3->tipo = "Laptop";
 					type="text"
 					placeholder=" Coloca tus funciones"
 					value="{{old ('funcion')}}"
+					required
 				/>
 			</div>
 		</div>
@@ -316,6 +322,7 @@ $equipo3->tipo = "Laptop";
 					type="text"
 					placeholder=" Marca "
 					value="{{old ('marca')}}"
+					required
 				/>
 			</div>
 			<div class="col-md-3"><strong>Modelo:</strong></div>
@@ -327,6 +334,7 @@ $equipo3->tipo = "Laptop";
 					type="text"
 					placeholder=" Modelo "
 					value="{{old ('modelo')}}"
+					required
 				/>
 			</div>
 		</div>
@@ -341,6 +349,7 @@ $equipo3->tipo = "Laptop";
 					type="text"
 					placeholder=" Serie "
 					value="{{old ('modelo')}}"
+					required
 				/>
 			</div>
 			<div class="col-md-3"><strong>MAC:</strong></div>
@@ -352,6 +361,7 @@ $equipo3->tipo = "Laptop";
 					type="text"
 					placeholder=" MAC "
 					value="{{old ('mac')}}"
+					required
 				/>
 			</div>
 		</div>
@@ -366,6 +376,7 @@ $equipo3->tipo = "Laptop";
 					type="text"
 					placeholder=" IP Antigua "
 					value="{{old ('ip_antigua')}}"
+					required
 				/>
 			</div>
 		</div>
@@ -378,7 +389,7 @@ $equipo3->tipo = "Laptop";
 		
 			<br>
 			<div class="col-md-3"><strong>Nombre del propietario: </strong></div>
-			<div class="col-md-3"><input type="text" name="equipo_propio"></div>
+			<div class="col-md-3"><input type="text" name="equipo_propio" required></div>
 		</div>
 		<br>
 		<br>
