@@ -375,6 +375,7 @@ $equipo3->tipo = "Laptop";
 			<div class="col-sm-1"><input type="radio" name="equipo_sict" value="si"> Sí</div>
 			<div class="col-sm-1"><input type="radio" name="equipo_sict" value="no" checked> No</div>
 		<br>
+		
 			<br>
 			<div class="col-md-3"><strong>Nombre del propietario: </strong></div>
 			<div class="col-md-3"><input type="text" name="equipo_propio"></div>
