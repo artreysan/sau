@@ -34,7 +34,6 @@ $autorizador5 = new autorizador;
 $autorizador5->nombre = "Ing. Iracema Mirón Ramírez";
 $autorizador5->puesto = "Subdirectora de Adminsitración de Portales";
 
-
 class direccion {
     public $ubicacion1;
 }
@@ -128,6 +127,7 @@ $equipo3->tipo = "Laptop";
 				</div>
 			</div>
 			<br>
+			<!--
 			<div class="row">
 				<div class="col-md-4"><strong>Dirección o subdireción:</strong></div>
 				<div class="col-md-8">
@@ -139,6 +139,7 @@ $equipo3->tipo = "Laptop";
 					</select>
 				</div>
 			</div>
+			-->
 	</div>
 	<br>
 	<!--Información del usuario a registrar-->

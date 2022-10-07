@@ -11,7 +11,7 @@
         {{ $solicitud->apellido_materno}} 
         {{ $solicitud->apellido_paterno}}
         a
-        {{ $solicitud->autorizador}},{{ $solicitud->puesto}}
+        {{ $solicitud->autorizador}}, {{$solicitud->puesto}}
     </p>
     <h3>Permisos requeridos:</h3>
     <p>

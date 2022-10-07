@@ -54,12 +54,28 @@ class SolicitudesController extends Controller
     public function crear (Request $request){
         //return $request->all();
         $solicitud = new  ModelsSolicitud();
-
+        $solicitud->autorizador = $request->autorizador;
+        switch($solicitud->autorizador){
+            case "Ing. Mario César Herrera González": 
+                $solicitud->puesto = "Director Coordinador de Innovación y Desarrollo Tecnológico";
+                break;
+            case "Ing. José Antonio Rulfo Zaragoza": 
+                $solicitud->puesto = "Director de Desarrollo Tecnológico";
+                break;
+            case "Mtra. Edna Patricia Santiago Vargas": 
+                $solicitud->puesto = "Subdirectora de Sistemas Administrativos";
+                break;
+            case "Ing. David de León Muñoz": 
+                $solicitud->puesto = "Subdirector de Innovación Tecnológica";
+                break;
+            case "Ing. Iracema Mirón Ramírez": 
+                $solicitud->puesto = "Subdirectora de Adminsitración de Portales";
+                break;
+        }
         $solicitud->nombre = $request->nombre;
         $solicitud->apellido_paterno = $request->apellido_paterno;
         $solicitud->apellido_materno = $request->apellido_materno;
-        $solicitud->autorizador = $request->autorizador;
-        $solicitud->puesto = $request->puesto;
+        $solicitud->userID = auth()->user()->id;
         $solicitud->empresa = $request->empresa;
         $solicitud->direccion = $request->direccion;
         $solicitud->contrato = $request->contrato;

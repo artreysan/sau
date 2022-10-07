@@ -17,7 +17,7 @@
             <li><a href="#">Algo</a></li>
             <li><a href="#">Algo más aquí</a></li>
             <li class="divider"></li>
-            <li><a href="{{route('logout')}}">Cerrar sesión</a></li>
+            <li><a href="{{route('principal')}}">Cerrar sesión</a></li>
           </ul>
         </li>
       </ul>

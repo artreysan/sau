@@ -21,7 +21,7 @@ use App\Http\Controllers\SolicitudesController;
 
 Route::get('/', function () {
     return view('principal');
-});
+})->name('principal');
 
 Route::get('/crear', [RegisterController::class,'index']);
 Route::post('/crear', [RegisterController::class,'store']);

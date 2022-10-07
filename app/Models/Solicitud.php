@@ -34,7 +34,8 @@ class Solicitud extends Model
         'equipo_propio',
         'equipo_sict',
         'fileID',
-        'emailSend'
+        'emailSend',
+        'userID'
     ];
 
     //Relacion one to Many 
