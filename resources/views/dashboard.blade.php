@@ -92,6 +92,9 @@
         <li>
             <a data-toggle="tab" href="#tab-02">Concluidas</a>
         </li>
+        <li>
+          <a data-toggle="tab" href="#tab-03">Vencidas</a>
+      </li>
       </ul>    
       <div class="tab-content">
         <div class="tab-pane active" id="tab-01">
@@ -101,9 +104,8 @@
                     <th scope="col">Folio</th>
                     <th scope="col">Fecha de solicitud</th>
                     <th scope="col">Estado</th>
-                    <th scope="col">Autorizador</th>
+                    <th scope="col">Nombre</th>
                     <th scope="col">Status</th>
-                    <th scope="col">Detalles</th>
                 </thead>
                 <tbody class="table-group-divider">
                   @foreach ($solicitud as $solicitud)
@@ -111,7 +113,7 @@
                     <th scope="row">{{$solicitud->fileID}}</th>
                     <td>{{$solicitud->created_at}}</td>
                     <td>
-                      @if ( time() - $solicitud->startTime >0 && time() - $solicitud->startTime < 3)
+                      @if ( time() - $solicitud->startTime > 0 && time() - $solicitud->startTime < 3)
                         <div id="circulo verde" style="height:30px; width:30px; background:#00ff00; -moz-border-radius:50px; -webkit-border-radius:50px; border-radius:50px;"></div>
                       @elseif ( time() - $solicitud->startTime >3 && time() - $solicitud->startTime < 6)
                         <div id="circulo verde" style="height:30px; width:30px; background:#FF9326; -moz-border-radius:50px; -webkit-border-radius:50px; border-radius:50px;"></div>
@@ -122,34 +124,16 @@
                       @endif
                       
                     </td>
-                    <td>{{$solicitud->autorizador}}</td>
-                    <td>Activo</td>
-                    <td>
-                      <li class="dropdown"><button class="glyphicon glyphicon-folder-open" data-toggle="dropdown"></button>
-                          <ul class="dropdown-menu" role="menu">
-                            <li><a href="/mostrar/{{$solicitud->fileID}}">Revisar</a></li>
-                            <li><a href="{{url('/editar')}}">Editar</a></li>
-                            <li><a href="{{url('/muro/stream-pdf/'.$solicitud->fileID)}}" target="_blank">Generar PDF</a></li>
-                          </ul>
-                     </li>
-                    </td>                
+                    <td>{{$solicitud->nombre}} {{$solicitud->apellido_paterno}}</td>
+                    <td>Activo</td>               
                   </tr>
                   @endforeach
                 </tbody>
               </table>
-              <ul class="pagination">
-                <li><a href="#">&laquo;</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&raquo;</a></li>
-              </ul>
         </div>
         <br>
-        <div class="tab-pane" id="tab-01"></div>
         <div class="tab-pane" id="tab-02"></div>
+        <div class="tab-pane" id="tab-03"></div>
       </div>
       <br>
       <br>
