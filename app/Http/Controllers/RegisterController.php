@@ -17,7 +17,7 @@ class RegisterController extends Controller
     }
 
     public function store(Request $request){
-
+        
         $user = new User();
         $user->direccion = $request->direccion;
         $user->empresa = $request->empresa;
@@ -26,8 +26,14 @@ class RegisterController extends Controller
         $user->apellido_materno= $request->apellido_materno;
         $user->email= $request->email;
         $user->password= Hash::make ($request->password);
-        $user->admin= true;
-
+        $user->admin= false;
+        $user->solicitudes = 0;
+        $user->ipFija = "";
+        $user->internet= "";
+        $user->vpn= "";
+        $user->gitlab= "";
+        $user->jira = "";
+        $user->glpi= "";
         $user->save();
 
         auth()->attempt($request->only('email','password'));

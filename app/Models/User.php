@@ -29,7 +29,14 @@ class User extends Authenticatable {
         'apellido_materno',
         'email',
         'password',
-        'admin'
+        'admin',
+        'solicitudes',
+        'ipFija',
+        'internet',
+        'vpn',
+        'gitlab',
+        'jira',
+        'glpi'
     ];
 
     /**

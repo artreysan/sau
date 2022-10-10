@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ConsultaController;
 use App\Http\Controllers\EditarSolicitudController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
@@ -33,8 +34,13 @@ Route::get('/logout', [LogoutController::class,'store'])->name('logout');
 
 Route::get('/muro', [PostController::class,'index'])->name('post.index');
 
+Route::get('/registro', [SolicitudesController::class,'registro']);
+Route::post('/registro/save', [SolicitudesController::class,'saveRegistro']);
+
 Route::get('/solicitud', [SolicitudesController::class,'index']);
 Route::post('/solicitud/save', [SolicitudesController::class,'crear']);
+
+Route::get('/consulta', [ConsultaController::class,'consulta']);
 
 //Ruta pendiente para editar solicitud
 Route::get('/editar', [EditarSolicitudController::class,'index']);
@@ -43,7 +49,6 @@ Route::get('/editar', [EditarSolicitudController::class,'index']);
 Route::get('/solicitud/download-pdf', [SolicitudesController::class, 'downloadPdf']);
 
 Route::get('/muro/stream-pdf/{fileID}', [SolicitudesController::class, 'streamPDF']);
-
 
 //Send Mail
 Route::get('/solicitud/sendMail', [SolicitudesController::class, 'sendMail']);

@@ -8,7 +8,6 @@
 
 <?php
 
-
 class autorizador {
     public $nombre;
     public $puesto;
@@ -127,19 +126,6 @@ $equipo3->tipo = "Laptop";
 				</div>
 			</div>
 			<br>
-			<!--
-			<div class="row">
-				<div class="col-md-4"><strong>Dirección o subdireción:</strong></div>
-				<div class="col-md-8">
-					<select name="puesto" id="puesto_id" required>
-						<option value="{{$autorizador2->puesto}}">{{$autorizador2->puesto}}</option>
-						<option value="{{$autorizador3->puesto}}">{{$autorizador3->puesto}}</option>
-						<option value="{{$autorizador4->puesto}}">{{$autorizador4->puesto}}</option>
-						<option value="{{$autorizador5->puesto}}">{{$autorizador5->puesto}}</option>
-					</select>
-				</div>
-			</div>
-			-->
 	</div>
 	<br>
 	<!--Información del usuario a registrar-->
@@ -155,63 +141,25 @@ $equipo3->tipo = "Laptop";
 		<div class="row">
 			<div class="col-md-3"><strong>Nombre(s):</strong></div>
 			<div class="col-md-3">
-				<input
-                	class="border border-success"
-                	id="nombre"
-                	name="nombre"
-                	type="text"
-                	placeholder=" Tu nombre "
-                	value="{{old ('nombre')}}"
-					required
-                />
+				<p>{{auth()->user()->name}}</p>	
 			</div>
-			<br>
 		</div>
-		<br>
 		<div class="row">
 			<div class="col-md-3"><strong>Apellido paterno:</strong></div>
 			<div class="col-md-3">
-				<input
-					class="border-success"
-					id="apellido_paterno"
-					name="apellido_paterno"
-					type="text"
-					placeholder=" Tu apellido paterno "
-					value="{{old ('apellido_paterno')}}" 
-					required
-				/>
+				<p>{{auth()->user()->apellido_paterno}}</p>	
 			</div>
 			<div class="col-md-3"><strong>Apellido materno:</strong></div>
 			<div class="col-md-3">
-				<input
-					class="border-success"
-					id="apellido_materno"
-					name="apellido_materno"
-					type="text"
-					placeholder=" Tu apellido materno "
-					value="{{old ('apellido_materno')}}"
-					required
-				/>
+				<p>{{auth()->user()->apellido_materno}}</p>	
 			</div>
 		</div>
-		<br>
-		
 		<div class="row">
 			<div class="col-md-3"><strong>Correo electronico:</strong></div>
 			<div class="col-md-3">
-				<input
-                	class="border border-success"
-                	id="emailSend"
-                	name="emailSend"
-                	type="text"
-                	placeholder=" Correo Electronico "
-                	value="{{old ('emailSend')}}"
-					required
-                />
+				<p>{{auth()->user()->email}}</p>	
 			</div>
-			<br>
 		</div>	
-
 		<br>
 		<div class="row">
 			<div class="col-md-3"><strong>Ubicación en la SICT:</strong></div>
@@ -224,15 +172,8 @@ $equipo3->tipo = "Laptop";
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-md-3"><strong>Empresa:</strong></div>
-			<div class="col-md-4">
-				<select name="empresa" id="empresa" required>
-					<option value="{{$empresa1->nombre}}">{{$empresa1->nombre}}</option>
-					<option value="{{$empresa2->nombre}}">{{$empresa2->nombre}}</option>
-				</select>
-			</div>
-			<div class="col-md-2"><strong>Contrato</strong></div>
-			<div class="col-md-2">
+			<div class="col-md-3"><strong>Contrato</strong></div>
+			<div class="col-md-3">
 				<select name="contrato" id="contrato" required>
 					<option value="{{$empresa1->contrato}}">{{$empresa1->contrato}}</option>
 					<option value="{{$empresa2->contrato}}">{{$empresa2->contrato}}</option>
@@ -263,28 +204,57 @@ $equipo3->tipo = "Laptop";
 			</div>
 		</nav>
 		<br>
-		<?
-			if(isset($PO))
-		?>
+		
+		<h4>Servicios TIC</h4>
 		<div class="row">
-			<div class="col-md-3"><strong>Directorio activo:</strong></div>
-			<div class="col-sm-1"><input type="radio" name="dir_activo" value="si" checked> Sí</div>
-			<div class="col-sm-1"><input type="radio" name="dir_activo" value="no"> No</div>
+		@if (auth()->user()->vpn == "")
+			<div class="col-md-3"><strong>VPN:</strong></div>
+			<div class="col-sm-1"><input type="radio" name="vpn" value="si" checked> Sí</div>
+			<div class="col-sm-1"><input type="radio" name="vpn" value="no"> No</div>
 			<br>
 			<br>
+		@endif
+		<!-- anañdir condicion de ip fija -->
 			<div class="col-md-3"><strong>IP Fija:</strong></div>
 			<div class="col-sm-1"><input type="radio" name="ip_fija" value="si" checked> Sí</div>
 			<div class="col-sm-1"><input type="radio" name="ip_fija" value="no"> No</div>
 			<br>
 			<br>
+		@if (auth()->user()->internet == "")
 			<div class="col-md-3"><strong>Internet:</strong></div>
 			<div class="col-sm-1"><input type="radio" name="internet" value="si" checked> Sí</div>
 			<div class="col-sm-1"><input type="radio" name="internet" value="no"> No</div>
+			<br>
+			<br>
+		@endif
 		</div>
 		<br>
+
+		<h4>Proyectos</h4>
+		@if (auth()->user()->gitlab == "")
 		<div class="row">
-			<div class="col-md-3"><strong>Nombre del sistema:</strong></div>
-			<div class="col-md-9"><strong>Nivel de permisos:</strong></div>
+			<div class="col-md-3"><strong>GitLab:</strong></div>
+			<div class="col-sm-1"><input type="radio" name="gitlab" value="si" checked> Sí</div>
+			<div class="col-sm-1"><input type="radio" name="gitlab" value="no"> No</div>
+			<br>
+			<br>
+		@endif
+		@if (auth()->user()->jira == "")
+			<div class="col-md-3"><strong>JIRA:</strong></div>
+			<div class="col-sm-1"><input type="radio" name="jira" value="si" checked> Sí</div>
+			<div class="col-sm-1"><input type="radio" name="jira" value="no"> No</div>
+			<br>
+			<br>
+		@endif
+		@if (auth()->user()->glpi == "")
+			<div class="col-md-3"><strong>GLPI:</strong></div>
+			<div class="col-sm-1"><input type="radio" name="glpi" value="si" checked> Sí</div>
+			<div class="col-sm-1"><input type="radio" name="glpi" value="no"> No</div>
+			<br>
+			<br>
+		@endif
+		</div>
+		</div>
 		</div>
 		<br>
 		<br>
@@ -367,14 +337,19 @@ $equipo3->tipo = "Laptop";
 			</div>
 		</div>
 		<br>
+		@if (auth()->user()->ipFija != "")
 		<div class="row">
 			<div class="col-md-3"><strong>IP Antigua:</strong></div>
 			<div class="col-md-3">
 				<input
+					type="text" 
+					minlength="7" 
+					maxlength="15" 
+					size="15" 
+					pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$"
 					class="border-success"
 					id="ip_antigua"
 					name="ip_antigua"
-					type="text"
 					placeholder=" IP Antigua "
 					value="{{old ('ip_antigua')}}"
 					required
@@ -382,6 +357,7 @@ $equipo3->tipo = "Laptop";
 			</div>
 		</div>
 		<br>
+		@endif
 		<div class="row">
 			<div class="col-md-3"><strong>Propiedad de la SICT: </strong></div>
 			<div class="col-sm-1"><input type="radio" name="equipo_sict" value="si"> Sí</div>
@@ -405,18 +381,12 @@ $equipo3->tipo = "Laptop";
 				value="Enviar solicitud">
 			</div>	
 			<div class="col-md-5">
-				<!--
-				<a href="{{ url('/solicitud/download-pdf') }}" target="_blank" >
-					<button class="btn btn-secundary btn-lg active" type="button"   
-						value=""> 
-						Previsualizar solicitud
-					</button>
-				</a>
-				-->
+				
 			</div>
 
 		</div>
 	</div>
+	
 </form>
 
 <br>

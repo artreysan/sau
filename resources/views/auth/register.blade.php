@@ -82,7 +82,7 @@ $empresa2->contrato = "BBC-3789";
                 <div class="col-md-3"><strong>Nombre(s):</strong></div>
                 <div class="col-md-3">
                     <input class="border border-success" id="name" name="name" type="text"
-                        placeholder=" Tu nombre " value="{{ old('name') }}" />
+                        placeholder=" Tu nombre " value="{{ old('name') }}" required/>
                 </div>
                 <br>
                 <br>
@@ -94,7 +94,7 @@ $empresa2->contrato = "BBC-3789";
                 <div class="col-md-3"><strong>Apellido paterno:</strong></div>
                 <div class="col-md-3">
                     <input class="border-success" id="apellido_paterno" name="apellido_paterno" type="text"
-                        placeholder=" Tu apellido paterno " value="{{ old('apellido_paterno') }}" />
+                        placeholder=" Tu apellido paterno " value="{{ old('apellido_paterno') }}" required/>
                 </div>
                 <br>
                 <br>
@@ -106,7 +106,7 @@ $empresa2->contrato = "BBC-3789";
                 <div class="col-md-3"><strong>Apellido materno:</strong></div>
                 <div class="col-md-3">
                     <input class="border border-success" id="apellido_materno" name="apellido_materno" type="text"
-                        placeholder=" Tu apellido materno " value="{{ old('apellido_materno') }}" />
+                        placeholder=" Tu apellido materno " value="{{ old('apellido_materno') }}" required/>
                 </div>
                 <br>
                 <br>
@@ -117,8 +117,8 @@ $empresa2->contrato = "BBC-3789";
             <div class="row">
                 <div class="col-md-3"><strong>Email:</strong></div>
                 <div class="col-md-3">
-                    <input class="border border-success" id="email" name="email" type="text"
-                        placeholder=" nombre@ejemplo.com " value="{{ old('email') }}" />
+                    <input class="border border-success" id="email" name="email" type="email"
+                        placeholder=" nombre@ejemplo.com " value="{{ old('email') }}" required/>
                 </div>
                 <br>
                 <br>
@@ -131,7 +131,7 @@ $empresa2->contrato = "BBC-3789";
                 <div class="col-md-3"><strong>Contraseña:</strong></div>
                 <div class="col-md-3">
                     <input class="border border-success" id="password" name="password" type="password"
-                        placeholder=" Contraseña " />
+                        placeholder=" Contraseña " required/>
                 </div>
                 <br>
                 <br>
@@ -143,7 +143,7 @@ $empresa2->contrato = "BBC-3789";
                 <div class="col-md-3"><strong>Repite tu contraseña:</strong></div>
                 <div class="col-md-3">
                     <input class="border border-success" id="password_confirmation" name="password_confirmation"
-                        type="password" placeholder=" Repite tu contraseña " />
+                        type="password" placeholder=" Repite tu contraseña " required/>
                 </div>
                 <br>
                 <br>

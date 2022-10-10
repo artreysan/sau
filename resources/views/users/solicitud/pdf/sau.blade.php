@@ -1543,7 +1543,7 @@
                             <td class="c6" colspan="3" rowspan="1">
                                 <p class="c3 c8">
                                     <span class="c9">
-                                        {{$solicitud->fileID}}
+
                                     </span>
                                 </p>
                             </td>
@@ -1556,38 +1556,48 @@
                             </td>
 <!-- ##############################################################################################  -->
                             <td class="c6" colspan="3" rowspan="1">
-                                @if($solicitud->dir_activo =='si')  
-                                    <ul class="c29  start">
+                                @if($solicitud->vpn=='si')  
+                                    <ul class="c29">
                                         <li class="c17 li-bullet-0">
-                                            <span class="c9">Usuario directorio Activo</span>
+                                            <span class="c9">VPN</span>
                                         </li>
                                     </ul>
                                 @endif
                                 @if($solicitud->ip_fija=='si')  
-                                    <p class="c8 c22"><span class="c9"></span></p>
                                     <ul class="c29 ">
                                         <li class="c17 li-bullet-0">
                                             <span class="c0">Ip Fija</span>
                                         </li>
                                     </ul>
                                 @endif
-                                @if($solicitud->ip_fija=='si')  
-                                    <p class="c22 c8"><span class="c0"></span></p>
+                                @if($solicitud->internet =='si')  
                                     <ul class="c29 ">
                                         <li class="c17 li-bullet-0">
-                                            <span class="c0"
-                                                >Permisos a los Sistemas:</span
-                                            >
+                                            <span class="c0">Internet</span>
                                         </li>
                                     </ul>
-                                    <p class="c3 c8 c56">
-                                        <span class="c0"></span>
-                                    </p>
+                                @endif
+                                @if($solicitud->ip_fija=='si')  
+                                    <ul class="c29 ">
+                                        <li class="c17 li-bullet-0">
+                                            <span class="c0">
+                                                Permisos a los Sistemas:
+                                            </span>
+                                        </li>
+                                    </ul>
                                     <ul class="c29 lst-kix_list_7-1 start">
                                         <li class="c12 li-bullet-0">
                                             <span class="c0">
-                                                (Nombre del sistema y nivel de
-                                                permisos)</span
+                                                @if($solicitud->gitlab == 'si')
+                                                    &nbsp;GitLab 
+                                                @endif 
+                                                @if($solicitud->jira == 'si')
+                                                    &nbsp;Jira 
+                                                @endif
+                                                @if($solicitud->glpi == 'si')
+                                                     &nbsp;GLPI
+                                                @endif
+                                            </span
                                             >
                                         </li>
                                     </ul>
@@ -1695,20 +1705,17 @@
                             <td class="c28" colspan="1" rowspan="1">
                                 <p class="c3">
                                     <span class="c2"
-                                        >PROPIEDAD DE SCT: &nbsp; &nbsp; &nbsp;
-                                        &nbsp; &nbsp; &nbsp; &nbsp;</span
+                                        >PROPIEDAD DE SCT: </span
                                     >
                                 </p>
                             </td>
                             <td class="c13" colspan="1" rowspan="1">
                                     @if($solicitud->equipo_sict =='si')  
-                                        <p class="c22 c8"><span class="c0"></span></p>
                                         <span class="c9">
                                             SI ( &nbsp; x &nbsp; ) &nbsp; &nbsp;
                                             &nbsp;NO &nbsp;( &nbsp; &nbsp; ) 
                                         </span>
                                     @else
-                                        <p class="c22 c8"><span class="c0"></span></p>
                                         <span class="c9">
                                             SI ( &nbsp; &nbsp; ) &nbsp; &nbsp;
                                             &nbsp;NO &nbsp;( &nbsp; x &nbsp; ) 

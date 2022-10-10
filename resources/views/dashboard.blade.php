@@ -29,23 +29,60 @@
 <br>
 <br>
 <br>
+
 <div class="container">
+  @if (auth()->user()->solicitudes == 0)
     <div class="row">
-        <div class="col-md-2">
-            <a href="{{ url('/solicitud') }}">
-              <button class="btn btn-default " type="button"> 
-                Solicitud  
-                <span class="glyphicon glyphicon-plus-sign"> </span>
-              </button>
-            </a>
-        </div>
-        <div class="col-md-2">
-          <button class="btn btn-primary" type="button">
-            Buscar Solicitud
-            <span class="glyphicon glyphicon-search"></span>
-          </button>
-        </div>
+      <div class="col-md-2">
+          <a href="{{ url('/solicitud') }}">
+            <button class="btn btn-default " type="button"> 
+              Registro 
+              <span class="glyphicon glyphicon-plus-sign"> </span>
+            </button>
+          </a>
+      </div>
+  @else
+    <div class="row">
+    @if (
+        auth()->user()->ipFija!= ""
+        && auth()->user()->internet!= ""
+        && auth()->user()->vpn!= ""
+        && auth()->user()->gitlab!= ""
+        && auth()->user()->jira!= ""
+        && auth()->user()->glpi!= ""
+        )
+    @else     
+      <div class="col-md-2">
+        
+          <a href="{{ url('/solicitud') }}">
+            <button class="btn btn-default " type="button"> 
+              Solicitud 
+              <span class="glyphicon glyphicon-plus-sign"> </span>
+            </button>
+          </a>
+      </div>
+    @endif
+      <div class="col-md-2">
+          <a href="{{ url('/solicitud') }}">
+            <button class="btn btn-default " type="button"> 
+              Baja
+              <span class="glyphicon glyphicon-plus-sign"> </span>
+            </button>
+          </a>
+      </div>
+      <div class="col-md-2">
+          <a href="{{ url('/consulta') }}">
+            <button class="btn btn-default " type="button"> 
+              Consulta
+              <span class="glyphicon glyphicon-plus-sign"> </span>
+            </button>
+          </a>
+      </div>
+      
     </div>
+  @endif
+  
+  @if (auth()->user()->solicitudes > 0)
     <br>
     <hr class="red">
     <ul class="nav nav-tabs">
@@ -63,7 +100,7 @@
                   <tr>
                     <th scope="col">Folio</th>
                     <th scope="col">Fecha de solicitud</th>
-                    <th scope="col">Colaborador</th>
+                    <th scope="col">Estado</th>
                     <th scope="col">Autorizador</th>
                     <th scope="col">Status</th>
                     <th scope="col">Detalles</th>
@@ -73,7 +110,18 @@
                   <tr>
                     <th scope="row">{{$solicitud->fileID}}</th>
                     <td>{{$solicitud->created_at}}</td>
-                    <td>{{$solicitud->nombre}} {{$solicitud->apellido_paterno}}</td>
+                    <td>
+                      @if ( time() - $solicitud->startTime >0 && time() - $solicitud->startTime < 3)
+                        <div id="circulo verde" style="height:30px; width:30px; background:#00ff00; -moz-border-radius:50px; -webkit-border-radius:50px; border-radius:50px;"></div>
+                      @elseif ( time() - $solicitud->startTime >3 && time() - $solicitud->startTime < 6)
+                        <div id="circulo verde" style="height:30px; width:30px; background:#FF9326; -moz-border-radius:50px; -webkit-border-radius:50px; border-radius:50px;"></div>
+                      @elseif ( time() - $solicitud->startTime >6 && time() - $solicitud->startTime < 9)
+                          <div id="circulo verde" style="height:30px; width:30px; background:#cc0000; -moz-border-radius:50px; -webkit-border-radius:50px; border-radius:50px;"></div>
+                      @else
+                          <div id="circulo verde" style="height:30px; width:30px; background:#000; -moz-border-radius:50px; -webkit-border-radius:50px; border-radius:50px;"></div>
+                      @endif
+                      
+                    </td>
                     <td>{{$solicitud->autorizador}}</td>
                     <td>Activo</td>
                     <td><li class="dropdown"><button class="glyphicon glyphicon-folder-open" data-toggle="dropdown"></button>
@@ -120,9 +168,14 @@
           </div>
         </div>
       </div>
-      <br>
-      <br>
-
+      
+  @endif
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 </div>
 
 

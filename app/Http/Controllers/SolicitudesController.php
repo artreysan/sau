@@ -14,17 +14,25 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Solicitud as ModelsSolicitud;
 
-class SolicitudesController extends Controller
-{
+class SolicitudesController extends Controller{
 
-    public function __construct()
-    {
+    public function __construct(){
         $this->middleware('auth');
     }
 
-    public function index(){
     
-        return view('solicitud');
+    
+
+    public function registro(){
+        return view('users.registro.registro');
+    }
+
+    public function index(){
+        return view('users.solicitud.solicitud');
+    }
+    
+    public function streamPDF( $fileID){
+        return response()->file(storage_path('pdf/'.$fileID.'_sau.pdf'));
     }
 
     public function sendMail($solicitud){
@@ -34,26 +42,19 @@ class SolicitudesController extends Controller
         return "Menasaje enviado";
     }
     
-
-    
     public function downloadPdf($solicitud){
         $path = storage_path('pdf/');
-        $pdf_name = time().'_sau.pdf';
-        $pdf = Pdf::loadView('solicitud.sau', array('solicitud'=>$solicitud));
+        $pdf_name = $solicitud->fileID.'_sau.pdf';
+        $pdf = Pdf::loadView('users.solicitud.pdf.sau', array('solicitud'=>$solicitud));
         $pdf->save($path.'/'.$pdf_name);
         $pdf->setPaper('a4');
         return $pdf->stream($pdf_name);
     }
 
-    public function streamPDF( $fileID){
-        return response()->file(storage_path('pdf/'.$fileID.'_sau.pdf'));
-    }
-    
-
     //Funcion para almacenar con ORM datos a la base de datos
     public function crear (Request $request){
-        //return $request->all();
         $solicitud = new  ModelsSolicitud();
+
         $solicitud->autorizador = $request->autorizador;
         switch($solicitud->autorizador){
             case "Ing. Mario César Herrera González": 
@@ -72,35 +73,86 @@ class SolicitudesController extends Controller
                 $solicitud->puesto = "Subdirectora de Adminsitración de Portales";
                 break;
         }
-        $solicitud->nombre = $request->nombre;
-        $solicitud->apellido_paterno = $request->apellido_paterno;
-        $solicitud->apellido_materno = $request->apellido_materno;
+        //Datos almacenados
+        $solicitud->nombre = auth()->user()->name;
+        $solicitud->apellido_paterno = auth()->user()->apellido_paterno;
+        $solicitud->apellido_materno = auth()->user()->apellido_materno;
+        $solicitud->emailSend = auth()->user()->email;
         $solicitud->userID = auth()->user()->id;
-        $solicitud->empresa = $request->empresa;
+
         $solicitud->direccion = $request->direccion;
         $solicitud->contrato = $request->contrato;
+        switch($solicitud->contrato){
+            case "MVC-4589":
+                $solicitud->empresa = "Patito S.A. de C.V";
+                break;
+            case "BBC-3789":
+                $solicitud->empresa = "Electronica Sacachispas S.A de C.V";
+                break;
+        }
         $solicitud->funcion = $request->funcion;
         $solicitud->direccion = $request->direccion;
-        $solicitud->dir_activo = $request->dir_activo; 
+        if(auth()->user()->vpn == ""){
+            $solicitud->vpn = $request->vpn; 
+        }
+        else{
+            $solicitud->vpn = "no" ; 
+        }
         $solicitud->ip_fija = $request->ip_fija;
-        $solicitud->internet = $request->internet;
+        
+        if(auth()->user()->internet == ""){
+            $solicitud->internet = $request->internet;
+        }
+        else{
+            $solicitud->internet = "no";
+        }
+        if(auth()->user()->gitlab == ""){
+            $solicitud->gitlab = $request->gitlab;
+        }
+        else{
+            $solicitud->gitlab = "no";
+        }
+        if(auth()->user()->jira == ""){
+            $solicitud->jira = $request->jira;
+        }
+        else{
+            $solicitud->jira = "no";
+        }
+        if(auth()->user()->glpi == ""){
+            $solicitud->glpi = $request->glpi;
+        }
+        else{
+            $solicitud->glpi = "no";
+        }
+        
+
         $solicitud->tipo_equipo = $request->tipo_equipo;
         $solicitud->marca = $request->marca;
         $solicitud->modelo = $request->modelo;
         $solicitud->serie = $request->serie;
         $solicitud->mac = $request->mac;
-        $solicitud->ip_antigua = $request->ip_antigua;
+        if(auth()->user()->ipFija == ""){
+            $solicitud->ip_antigua = "N/A";
+        }
+        else{
+            $solicitud->ip_antigua = $request->ip_antigua;
+        }
         $solicitud->equipo_propio = $request->equipo_propio;
         $solicitud->equipo_sict = $request->equipo_sict;
-        $solicitud->fileID = time();
-        $solicitud->emailSend = $request->emailSend;
+        $solicitud->startTime = time();
+        $solicitud->fileID = auth()->user()->id.$solicitud->startTime;
 
         $solicitud->save();
-        $this->sendMail($solicitud);        
-         
+
+        $this->downloadPdf($solicitud);
+
+        //Update query
+        User::where('id', auth()->user()->id)->update([
+           'solicitudes' => auth()->user()->solicitudes+1
+        ]);        
 
         return redirect()->route('post.index');
-       // return redirect()->route('posts.index');
+        // return redirect()->route('posts.index');
     }
 
 
