@@ -96,9 +96,8 @@
     <br>
     <br>
     <br>
-    <form action="/solicitud/save" method="POST">
+    <form name="formSolicitud" action="/solicitud/save" method="POST">
         @csrf
-        <br>
         <br>
         <div class="container">
             <h4>SOLICITUD DE ALTA SERVICIOS INTERNOS DE TICS USUARIOS EXTERNOS EN EL SIGTIC.</h4>
@@ -118,37 +117,31 @@
             </nav>
             <br>
             <div class="row">
-				<script>
-					document.cookie = "autorizador = " ; //Este es el que estás ya obteniendo vía JS
-				</script>
-				
-				<?php
-					 $variable= $_COOKIE['variable'];
-				?>
                 <div class="col-md-4"><strong>Nombre del director o subdiector:</strong></div>
-                <div class="col-md-8">
-                    <select name="autorizador" id="auto_id" required>
-                        <option value="{{ $autorizador1->nombre }}">{{ $autorizador1->nombre }}</option>
-                        <option value="{{ $autorizador2->nombre }}">{{ $autorizador2->nombre }}</option>
-                        <option value="{{ $autorizador3->nombre }}">{{ $autorizador3->nombre }}</option>
-                        <option value="{{ $autorizador4->nombre }}">{{ $autorizador4->nombre }}</option>
-                        <option value="{{ $autorizador5->nombre }}">{{ $autorizador5->nombre }}</option>
-                    </select>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-4"><strong>Dirección o subdireción:</strong></div>
-                <div class="col-md-8">
-                    <select name="puesto" id="puesto_id" required>
-                        <option value="{{ $autorizador2->puesto }}">{{ $autorizador2->puesto }}</option>
-                        <option value="{{ $autorizador3->puesto }}">{{ $autorizador3->puesto }}</option>
-                        <option value="{{ $autorizador4->puesto }}">{{ $autorizador4->puesto }}</option>
-                        <option value="{{ $autorizador5->puesto }}">{{ $autorizador5->puesto }}</option>
-                    </select>
-                </div>
-            </div>
+                <div class="col-md-4">
+					<select id="autorizador" name="autorizador">
+						<option name="autorizador1" value="autorizador1">{{ $autorizador1->nombre }}</option>
+                        <option name="autorizador2" value="{{ $autorizador2->nombre }}">{{ $autorizador2->nombre }}</option>
+                        <option name="autorizador3" value="{{ $autorizador3->nombre }}">{{ $autorizador3->nombre }}</option>
+                        <option name="autorizador4" value="{{ $autorizador4->nombre }}">{{ $autorizador4->nombre }}</option>
+                        <option name="autorizador5" value="{{ $autorizador5->nombre }}">{{ $autorizador5->nombre }}</option>
+					</select>
+                </div>			
+				<br>
+				<br>
+				<div class="col-md-4"><strong>Dirección o subdireción:</strong></div>
+				<div class="col-md-4">
+					<select name="puesto" id="puesto_id" required>
+						<option value="{{$autorizador2->puesto}}">{{$autorizador2->puesto}}</option>
+						<option value="{{$autorizador4->puesto}}">{{$autorizador4->puesto}}</option>
+						<option value="{{$autorizador3->puesto}}">{{$autorizador3->puesto}}</option>
+						<option value="{{$autorizador5->puesto}}">{{$autorizador5->puesto}}</option>
+					</select>
+				</div>
+			</div>
         </div>
+        <br>
+		<br>
         <br>
 
         <!--Información del usuario a registrar-->
@@ -262,6 +255,8 @@
                 </div>
             </div>
             <br>
+			<br>
+			<br>
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header" name="datos_solicitante">
@@ -292,6 +287,7 @@
             </div>
             <br>
             <br>
+			<br>
 			<br>
         </div>
         <!--Fin del bloeque de información del usuario a registrar-->

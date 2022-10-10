@@ -75,7 +75,7 @@
                     <td>
                       <li class="dropdown"><button class="glyphicon glyphicon-folder-open" data-toggle="dropdown"></button>
                           <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Revisar</a></li>
+                            <li><a href="/mostrar/{{$solicitud->fileID}}">Revisar</a></li>
                             <li><a href="{{url('/editar')}}">Editar</a></li>
                             <li><a href="{{url('/muro/stream-pdf/'.$solicitud->fileID)}}" target="_blank">Generar PDF</a></li>
                           </ul>
