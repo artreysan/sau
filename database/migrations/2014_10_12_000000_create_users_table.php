@@ -17,10 +17,16 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
+            $table->boolean('admin');
             $table->timestamps();
+            $table->integer('solicitudes');
+            $table->ipAddress('ipFija');
+            $table->string('internet');
+            $table->string('vpn');
+            $table->string('gitlab');
+            $table->string('jira');
+            $table->string('glpi');
         });
     }
 

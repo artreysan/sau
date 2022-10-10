@@ -5,8 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Solicitud extends Model
-{
+class Solicitud extends Model{
     
     use HasFactory;
 
@@ -22,9 +21,12 @@ class Solicitud extends Model
         'direccion',
         'contrato',
         'funcion',
-        'dir_activo',
+        'vpn',
         'ip_fija',
         'internet',
+        'gitlab',
+        'jira',
+        'glpi',
         'tipo_equipo',
         'marca',
         'modelo',
@@ -34,7 +36,9 @@ class Solicitud extends Model
         'equipo_propio',
         'equipo_sict',
         'fileID',
-        'emailSend'
+        'emailSend',
+        'userID',
+        'startTime'
     ];
 
     //Relacion one to Many 

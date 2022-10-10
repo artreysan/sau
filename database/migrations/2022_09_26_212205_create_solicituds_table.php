@@ -25,9 +25,12 @@ return new class extends Migration
             $table->string('contrato', 100);
             $table->string('funcion', 100);
             $table->string('tipo_equipo', 50);
-            $table->char('dir_activo', 2);
+            $table->char('vpn', 2);
             $table->char('ip_fija', 2);
             $table->char('internet', 2);
+            $table->char('gitlab', 2);
+            $table->char('jira', 2);
+            $table->char('glpi', 2);
             $table->string('marca', 50);
             $table->string('modelo', 50);
             $table->string('serie', 50);

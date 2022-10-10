@@ -14,8 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::table('solicituds', function (Blueprint $table) {
-            $table->string('fileID')->nullable();
+            $table->string('fileID')->nullable()->unique();
             $table->string('emailSend')->after('apellido_materno');
+            $table->unsignedInteger('userID');
+            $table->unsignedInteger('startTime');
         });
     }
 
@@ -29,7 +31,8 @@ return new class extends Migration
         Schema::table('solicituds', function (Blueprint $table) {
             $table->string('fileID');
             $table->string('emailSend');
-            //
+            $table->unsignedInteger('userID');
+            $table->unsignedInteger('startTime');
         });
     }
 };

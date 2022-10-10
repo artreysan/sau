@@ -1554,39 +1554,49 @@
                                     <span class="c2">SERVICIOS REQUERIDOS</span>
                                 </p>
                             </td>
+<!-- ##############################################################################################  -->
                             <td class="c6" colspan="3" rowspan="1">
-                                <ul class="c29  start">
-                                    <li class="c17 li-bullet-0">
-                                        <span class="c9">Usuario directorio Activo</span>
-                                    </li>
-                                </ul>
-                                <p class="c8 c22"><span class="c9"></span></p>
-                                <ul class="c29 ">
-                                    <li class="c17 li-bullet-0">
-                                        <span class="c0">Ip Fija</span>
-                                    </li>
-                                </ul>
-                                <p class="c22 c8"><span class="c0"></span></p>
-                                <ul class="c29 ">
-                                    <li class="c17 li-bullet-0">
-                                        <span class="c0"
-                                            >Permisos a los Sistemas:</span
-                                        >
-                                    </li>
-                                </ul>
-                                <p class="c3 c8 c56">
-                                    <span class="c0"></span>
-                                </p>
-                                <ul class="c29 lst-kix_list_7-1 start">
-                                    <li class="c12 li-bullet-0">
-                                        <span class="c0"
-                                            >(Nombre del sistema y nivel de
-                                            permisos)</span
-                                        >
-                                    </li>
-                                </ul>
+                                @if($solicitud->dir_activo =='si')  
+                                    <ul class="c29  start">
+                                        <li class="c17 li-bullet-0">
+                                            <span class="c9">Usuario directorio Activo</span>
+                                        </li>
+                                    </ul>
+                                @endif
+                                @if($solicitud->ip_fija=='si')  
+                                    <ul class="c29 ">
+                                        <li class="c17 li-bullet-0">
+                                            <span class="c0">Ip Fija</span>
+                                        </li>
+                                    </ul>
+                                @endif
+                                @if($solicitud->internet =='si')  
+                                    <ul class="c29 ">
+                                        <li class="c17 li-bullet-0">
+                                            <span class="c0">Internet</span>
+                                        </li>
+                                    </ul>
+                                @endif
+                                @if($solicitud->ip_fija=='si')  
+                                    <ul class="c29 ">
+                                        <li class="c17 li-bullet-0">
+                                            <span class="c0"
+                                                >Permisos a los Sistemas:</span
+                                            >
+                                        </li>
+                                    </ul>
+                                    <ul class="c29 lst-kix_list_7-1 start">
+                                        <li class="c12 li-bullet-0">
+                                            <span class="c0">
+                                                (Nombre del sistema y nivel de
+                                                permisos)</span
+                                            >
+                                        </li>
+                                    </ul>
+                                @endif
                                 <p class="c22 c8"><span class="c0"></span></p>
                             </td>
+<!-- ##############################################################################################  -->
                         </tr>
                     </table>
                     <p class="c3 c8"><span class="c9"></span></p>
@@ -1620,6 +1630,7 @@
                                 </span></p>
                             </td>
                         </tr>
+
                         <tr class="c37">
                             <td class="c28" colspan="1" rowspan="1">
                                 <p class="c3"><span class="c2">MARCA:</span></p>
@@ -1686,37 +1697,44 @@
                             <td class="c28" colspan="1" rowspan="1">
                                 <p class="c3">
                                     <span class="c2"
-                                        >PROPIEDAD DE SCT: &nbsp; &nbsp; &nbsp;
-                                        &nbsp; &nbsp; &nbsp; &nbsp;</span
+                                        >PROPIEDAD DE SCT: </span
                                     >
                                 </p>
                             </td>
                             <td class="c13" colspan="1" rowspan="1">
-                                <p class="c3">
-                                    <span class="c9"
-                                        >SI ( &nbsp; &nbsp; ) &nbsp; &nbsp;
-                                        &nbsp;NO &nbsp;( &nbsp; &nbsp; ) 
-                                    </span>
-                                </p>
+                                    @if($solicitud->equipo_sict =='si')  
+                                        <span class="c9">
+                                            SI ( &nbsp; x &nbsp; ) &nbsp; &nbsp;
+                                            &nbsp;NO &nbsp;( &nbsp; &nbsp; ) 
+                                        </span>
+                                    @else
+                                        <span class="c9">
+                                            SI ( &nbsp; &nbsp; ) &nbsp; &nbsp;
+                                            &nbsp;NO &nbsp;( &nbsp; x &nbsp; ) 
+                                        </span>
+                                    @endif
                             </td>
                         </tr>
-                        <tr class="c32">
-                            <td class="c28" colspan="1" rowspan="1">
-                                <p class="c3">
-                                    <span class="c2"
-                                        >NOMBRE PROPIETARIO: &nbsp; &nbsp; &nbsp;
-                                        &nbsp; &nbsp; &nbsp; &nbsp;</span
-                                    >
-                                </p>
-                            </td>
-                            <td class="c13" colspan="1" rowspan="1">
-                                <p class="c3 c8">
-                                    <span class="c9">
-                                        {{$solicitud->equipo_propio}}
-                                    </span>
-                                </p>
-                            </td>
-                        </tr>
+                        
+                        @if($solicitud->equipo_sict=='no')  
+                            <tr class="c32">
+                                <td class="c28" colspan="1" rowspan="1">
+                                    <p class="c3">
+                                        <span class="c2"
+                                            >NOMBRE PROPIETARIO: &nbsp; &nbsp; &nbsp;
+                                            &nbsp; &nbsp; &nbsp; &nbsp;</span
+                                        >
+                                    </p>
+                                </td>
+                                <td class="c13" colspan="1" rowspan="1">
+                                    <p class="c3 c8">
+                                        <span class="c9">
+                                            {{$solicitud->equipo_propio}}
+                                        </span>
+                                    </p>
+                                </td>
+                            </tr>
+                        @endif
                     </table>
                     <p class="c3 c8"><span class="c9"></span></p>
                 </td>
