@@ -36,8 +36,8 @@
               <button class="btn btn-default glyphicon glyphicon-plus-sign"type="button"> Solicitud </button></a>
         </div>
         <div class="col-md-2">
-          <button class="btn btn-primary" type="button">
-            Buscar Solicitud
+          <button class="btn btn-primary" type="">
+            Buscar
             <span class="glyphicon glyphicon-search"></span>
           </button>
         </div>
@@ -72,13 +72,14 @@
                     <td>{{$solicitud->nombre}} {{$solicitud->apellido_paterno}}</td>
                     <td>{{$solicitud->autorizador}}</td>
                     <td>Activo</td>
-                    <td><li class="dropdown"><button class="glyphicon glyphicon-folder-open" data-toggle="dropdown"></button>
+                    <td>
+                      <li class="dropdown"><button class="glyphicon glyphicon-folder-open" data-toggle="dropdown"></button>
                           <ul class="dropdown-menu" role="menu">
                             <li><a href="#">Revisar</a></li>
                             <li><a href="{{url('/editar')}}">Editar</a></li>
                             <li><a href="{{url('/muro/stream-pdf/'.$solicitud->fileID)}}" target="_blank">Generar PDF</a></li>
                           </ul>
-                    </li>
+                     </li>
                     </td>                
                   </tr>
                   @endforeach

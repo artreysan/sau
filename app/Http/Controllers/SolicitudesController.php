@@ -113,19 +113,6 @@ class SolicitudesController extends Controller
             'equipo_sict' => 'required'
         ]);
 
-        User::create([
-            'ubicacion' => $request->ubicacion,
-            'empresa' => $request->empresa,
-            'contrato' => $request->contrato,
-            'name' => $request->name,
-            'apellido_paterno' => $request->apellido_paterno,
-            'apellido_materno' => $request->apellido_materno,
-            'email' => $request->email,
-            'password' => Hash::make ($request->password)
-        ]);
-
-        auth()->attempt($request->only('email','password'));
-
         return redirect()->route('posts.index');
     }
 
