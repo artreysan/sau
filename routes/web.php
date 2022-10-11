@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BajaController;
 use App\Http\Controllers\ConsultaController;
 use App\Http\Controllers\EditarSolicitudController;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +40,9 @@ Route::post('/registro/save', [SolicitudesController::class,'saveRegistro']);
 
 Route::get('/solicitud', [SolicitudesController::class,'index']);
 Route::post('/solicitud/save', [SolicitudesController::class,'crear']);
+
+Route::get('/baja', [BajaController::class,'index']);
+Route::post('/baja/save', [BajaController::class,'crear']);
 
 Route::get('/consulta', [ConsultaController::class,'consulta']);
 
