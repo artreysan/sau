@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use view;
 use Svg\Tag\Path;
 use App\Models\User;
+use App\Models\Solicitud;
 use Illuminate\Http\Request;
 use App\Mail\SolicitudMailable;
 use Barryvdh\DomPDF\Facade\Pdf;
-use App\Http\Controllers\Solicitud;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -155,9 +155,9 @@ class SolicitudesController extends Controller{
         // return redirect()->route('posts.index');
     }
 
-
-    public function store(Request $request){
-        $this->validate($request,[
+    public function store(Request $solicitud){
+        $this->validate($solicitud,[
+            'id',
             'nombre' => 'required|min:1|max:20',
             'apellido_paterno' => 'required|min:5|max:100',
             'apellido_materno' => 'required|min:5|max:100',
@@ -176,28 +176,27 @@ class SolicitudesController extends Controller{
             'serie' => 'required',
             'mac' => 'required',
             'ip_antigua' => 'required',
+            'fileID',
             'equipo_propio' => 'required',
             'equipo_sict' => 'required'
         ]);
 
-        User::create([
-            'ubicacion' => $request->ubicacion,
-            'empresa' => $request->empresa,
-            'contrato' => $request->contrato,
-            'name' => $request->name,
-            'apellido_paterno' => $request->apellido_paterno,
-            'apellido_materno' => $request->apellido_materno,
-            'email' => $request->email,
-            'password' => Hash::make ($request->password)
-        ]);
-
-        auth()->attempt($request->only('email','password'));
-
         return redirect()->route('posts.index');
     }
 
+    public function editar()
+    {
+        return view('editar');
+    }
 
 
-}
+    public function show(Request $fileID)
+    {
+        dd($fileID);
+
+    }
+
+       
+    }
 
 

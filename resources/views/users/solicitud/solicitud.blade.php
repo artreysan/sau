@@ -1,11 +1,9 @@
 @extends('layouts.app')
 
 @section('titulo')
-
 @endsection
 
 @section('contenido')
-
 <?php
 
 class autorizador {
@@ -388,8 +386,4 @@ $equipo3->tipo = "Laptop";
 	</div>
 	
 </form>
-
-<br>
-<br>
-
 @endsection
