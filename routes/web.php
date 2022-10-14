@@ -51,6 +51,7 @@ Route::get('/baja', [BajaController::class,'index']);
 Route::post('/baja/save', [BajaController::class,'crear']);
 
 Route::get('/consulta', [ConsultaController::class,'consulta']);
+Route::get('/consulta/{idEquipo}', [ConsultaController::class, 'consultaPermisos']);
 
 //Ruta pendiente para editar solicitud
 Route::get('/editar', [EditarSolicitudController::class,'index']);

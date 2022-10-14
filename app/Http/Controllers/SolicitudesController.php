@@ -20,9 +20,6 @@ class SolicitudesController extends Controller{
         $this->middleware('auth');
     }
 
-    
-    
-
     public function registro(){
         return view('users.registro.registro');
     }

@@ -34,7 +34,6 @@ $finalizados = $solicitud;
     <br>
     <br>
     <br>
-
     <div class="container">
         @if (auth()->user()->solicitudes == 0)
             <div class="row">
@@ -56,23 +55,29 @@ $finalizados = $solicitud;
                         auth()->user()->glpi != '')
                     @else
                         <div class="col-md-2">
-
                             <a href="{{ url('/solicitud') }}">
                                 <button class="btn btn-default " type="button">
-                                    Solicitud
+                                    Soliocitud
                                     <span class="glyphicon glyphicon-plus-sign"> </span>
                                 </button>
                             </a>
                         </div>
                     @endif
-                    <div class="col-md-2">
-                        <a href="{{ url('/baja') }}">
-                            <button class="btn btn-default " type="button">
-                                Baja
-                                <span class="glyphicon glyphicon-plus-sign"> </span>
-                            </button>
-                        </a>
-                    </div>
+                    @if (auth()->user()->ipFija != '' || 
+                        auth()->user()->internet != '' ||
+                        auth()->user()->vpn != '' ||
+                        auth()->user()->gitlab != '' ||
+                        auth()->user()->jira != '' ||
+                        auth()->user()->glpi != '')
+                        <div class="col-md-2">
+                            <a href="{{ url('/baja') }}">
+                                <button class="btn btn-default " type="button">
+                                    Baja
+                                    <span class="glyphicon glyphicon-plus-sign"> </span>
+                                </button>
+                            </a>
+                        </div>   
+                    @endif
                     <div class="col-md-2">
                         <a href="{{ url('/consulta') }}">
                             <button class="btn btn-default " type="button">
@@ -112,29 +117,25 @@ $finalizados = $solicitud;
                         </thead>
                         <tbody class="table-group-divider">
                             @foreach ($solicitud as $solicitud)
-                                @if (time() - $solicitud->startTime < 777600)
+                                @if (time() - $solicitud->startTime < 777600/1080)
                                     <tr>
                                         <th scope="row">{{ $solicitud->fileID }}</th>
                                         <td>{{ $solicitud->created_at }}</td>
                                         <td>
-                                            @if (time() - $solicitud->startTime > 0 && time() - $solicitud->startTime < 259200)
+
+                                            @if (time() - $solicitud->startTime > 0 && time() - $solicitud->startTime < 259200/1080)
                                                 <div id="circulo verde"
                                                     style="height:30px; width:30px; background:#00ff00; -moz-border-radius:50px; -webkit-border-radius:50px; border-radius:50px;">
                                                 </div>
-                                            @elseif (time() - $solicitud->startTime > 259200 && time() - $solicitud->startTime < 518400)
+                                            @elseif (time() - $solicitud->startTime > 259200/1080 && time() - $solicitud->startTime < 518400/1080)
                                                 <div id="circulo verde"
                                                     style="height:30px; width:30px; background:#FF9326; -moz-border-radius:50px; -webkit-border-radius:50px; border-radius:50px;">
                                                 </div>
-                                            @elseif (time() - $solicitud->startTime > 518400 && time() - $solicitud->startTime < 777600)
+                                            @elseif (time() - $solicitud->startTime > 518400/1080 && time() - $solicitud->startTime < 777600/1080)
                                                 <div id="circulo verde"
                                                     style="height:30px; width:30px; background:#cc0000; -moz-border-radius:50px; -webkit-border-radius:50px; border-radius:50px;">
                                                 </div>
-                                            @else
-                                                <div id="circulo verde"
-                                                    style="height:30px; width:30px; background:#000; -moz-border-radius:50px; -webkit-border-radius:50px; border-radius:50px;">
-                                                </div>
                                             @endif
-
                                         </td>
                                         <td>{{ $solicitud->autorizador }}</td>
                                         <td>Activo</td>
@@ -178,7 +179,7 @@ $finalizados = $solicitud;
 
                         <tbody class="table-group-divider">
                             @foreach ($finalizados as $finalizado)
-                                @if (time() - $finalizado->startTime > 777600)
+                                @if (time() - $finalizado->startTime > 777600/1080)
                                     <tr>
                                         <th scope="row">{{ $finalizado->fileID }}</th>
                                         <td>{{ $finalizado->created_at }}</td>

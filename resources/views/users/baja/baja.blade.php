@@ -214,12 +214,14 @@ $equipo3->tipo = "Laptop";
 			<br>
 			<br>
 		@endif
+		@if (auth()->user()->ipFija != "")
 		<!-- anañdir condicion de ip fija -->
 			<div class="col-md-3"><strong>IP Fija:</strong></div>
 			<div class="col-sm-1"><input type="radio" name="ip_fija" value="si" checked> Sí</div>
 			<div class="col-sm-1"><input type="radio" name="ip_fija" value="no"> No</div>
 			<br>
 			<br>
+		@endif
 		@if (auth()->user()->internet != "")
 			<div class="col-md-3"><strong>Internet:</strong></div>
 			<div class="col-sm-1"><input type="radio" name="internet" value="si" checked> Sí</div>

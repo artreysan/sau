@@ -37,9 +37,7 @@ class RegisterController extends Controller
         $user->save();
 
         auth()->attempt($request->only('email','password'));
-
         return redirect()->route('post.index');
-
 
     }
 
