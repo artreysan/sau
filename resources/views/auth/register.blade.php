@@ -27,16 +27,7 @@ $empresa2->nombre = "Electronica Sacachispas S.A de C.V";
 $empresa2->contrato = "BBC-3789";
 ?>
 
-    <div class="container">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header" name="datos_solicitante">
-                    <h4>Información del usuario a registrar:</h4>
-                </div>
-            </div>
-        </nav>
-        <hr class="red">
-    </div>
+ 
 @endsection
 
 @section('contenido')
@@ -47,36 +38,20 @@ $empresa2->contrato = "BBC-3789";
             outline: 0 none;
         }
     </style>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header" name="datos_solicitante">
+                    <h4>Información del usuario a registrar:</h4>
+                </div>
+            </div>
+        </nav>
+        <hr class="red">
+    </div>
 
     <form action="/crear" method="POST">
         @csrf
         <div class="container">
-            <div class="row">
-                <div class="col-md-3"><strong>Ubicación en la SICT:</strong></div>
-                <div class="col-md-3">
-                    <select name="direccion">
-                        <option value={{$ubicacion1->ubicacion}}>{{$ubicacion1->ubicacion}}</option>
-                        <option value={{$ubicacion2->ubicacion}}>{{$ubicacion2->ubicacion}}</option>
-                    </select>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-3"><strong>Empresa:</strong></div>
-                <div class="col-md-4">
-                    <select name="empresa">
-                        <option value={{$empresa1->nombre}}>{{$empresa1->nombre}}</option>
-                        <option value={{$empresa2->nombre}}>{{$empresa2->nombre}}</option>
-                    </select>
-                </div>
-                <div class="col-md-2"><strong>Contrato</strong></div>
-                <div class="col-md-2">
-                    <select name="contrato">
-                        <option value={{$empresa2->contrato}}>{{$empresa2->contrato}}</option>
-                        <option value={{$empresa2->contrato}}>{{$empresa2->contrato}}</option>
-                    </select>
-                </div>
-            </div>
             <hr>
             <div class="row">
                 <div class="col-md-3"><strong>Nombre(s):</strong></div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('titulo')
-@endsection
+@section('titulo','Muro')
+
 @php
 $finalizados = $solicitud;
 @endphp
@@ -18,11 +18,9 @@ $finalizados = $solicitud;
                         <a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown"
                             role="button" aria-expanded="false"><span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"></a></li>
-                            <li><a href="#">Algo</a></li>
-                            <li><a href="#">Algo más aquí</a></li>
+                            <li><a href="{{ route('perfil') }}">Perfil</a></li>
                             <li class="divider"></li>
-                            <li><a href="{{ route('principal') }}">Cerrar sesión</a></li>
+                            <li><a href="{{ url('/') }}">Cerrar sesión</a></li>
                         </ul>
                     </li>
                 </ul>

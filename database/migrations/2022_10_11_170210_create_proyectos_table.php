@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('proyectos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('idUsuario');
+            $table->unsignedInteger('idUsuario')->unique();
             $table->string('nombreCompletoSistema');
             $table->string('nombreCortoSistema');
             
