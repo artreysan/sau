@@ -291,21 +291,21 @@ return [
 
     'menu' => [
         // Navbar items:
-        // [
-        //     'type'         => 'navbar-search',
-        //     'text'         => 'Buscar',
-        //     'topnav_right' => true,
-        // ],
-        // [
-        //     'type'         => 'fullscreen-widget',
-        //     'topnav_right' => true,
-        // ],
+        [
+            'type'         => 'navbar-search',
+            'text'         => 'Buscar',
+            'topnav_right' => true,
+        ],
+        [
+            'type'         => 'fullscreen-widget',
+            'topnav_right' => true,
+        ],
 
         // Sidebar items:
-        // [
-        //     'type' => 'sidebar-menu-search',
-        //     'text' => 'Buscar',
-        // ],
+        [
+            'type' => 'sidebar-menu-search',
+            'text' => 'Buscar',
+        ],
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
