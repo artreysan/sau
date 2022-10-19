@@ -19,11 +19,10 @@ class RegisterController extends Controller
     public function store(Request $request){
         
         $user = new User();
-        $user->direccion = $request->direccion;
-        $user->empresa = $request->empresa;
         $user->name= $request->name;
         $user->apellido_paterno= $request->apellido_paterno;
         $user->apellido_materno= $request->apellido_materno;
+        $user->rol = "";
         $user->email= $request->email;
         $user->password= Hash::make ($request->password);
         $user->admin= false;
@@ -37,14 +36,9 @@ class RegisterController extends Controller
         $user->save();
 
         auth()->attempt($request->only('email','password'));
-
         return redirect()->route('post.index');
 
-
     }
-
-
-
 }
 
 
