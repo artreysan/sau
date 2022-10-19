@@ -124,6 +124,7 @@ class ComposerStaticInit9489ff931b728db9fd6d7fad09a7d9da
             'Laravel\\SerializableClosure\\' => 28,
             'Laravel\\Sanctum\\' => 16,
             'Laravel\\Sail\\' => 13,
+            'Laravel\\Breeze\\' => 15,
         ),
         'J' => 
         array (
@@ -427,6 +428,10 @@ class ComposerStaticInit9489ff931b728db9fd6d7fad09a7d9da
         array (
             0 => __DIR__ . '/..' . '/laravel/sail/src',
         ),
+        'Laravel\\Breeze\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/breeze/src',
+        ),
         'JeroenNoten\\LaravelAdminLte\\' => 
         array (
             0 => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src',
@@ -568,11 +573,13 @@ class ComposerStaticInit9489ff931b728db9fd6d7fad09a7d9da
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\BajaController' => __DIR__ . '/../..' . '/app/Http/Controllers/BajaController.php',
         'App\\Http\\Controllers\\ConsultaController' => __DIR__ . '/../..' . '/app/Http/Controllers/ConsultaController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/LoginController.php',
         'App\\Http\\Controllers\\LogoutController' => __DIR__ . '/../..' . '/app/Http/Controllers/LogoutController.php',
+        'App\\Http\\Controllers\\PerfilController' => __DIR__ . '/../..' . '/app/Http/Controllers/PerfilController.php',
         'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
         'App\\Http\\Controllers\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegisterController.php',
         'App\\Http\\Controllers\\SendMailController' => __DIR__ . '/../..' . '/app/Http/Controllers/SendMailController.php',
@@ -591,8 +598,17 @@ class ComposerStaticInit9489ff931b728db9fd6d7fad09a7d9da
         'App\\Models\\Authorizer' => __DIR__ . '/../..' . '/app/Models/Authorizer.php',
         'App\\Models\\Collaborator' => __DIR__ . '/../..' . '/app/Models/Collaborator.php',
         'App\\Models\\Enterprise' => __DIR__ . '/../..' . '/app/Models/Enterprise.php',
+        'App\\Models\\Equipo' => __DIR__ . '/../..' . '/app/Models/Equipo.php',
         'App\\Models\\Location' => __DIR__ . '/../..' . '/app/Models/Location.php',
+        'App\\Models\\Proyectogitlab' => __DIR__ . '/../..' . '/app/Models/Proyectogitlab.php',
+        'App\\Models\\Proyectoglpi' => __DIR__ . '/../..' . '/app/Models/Proyectoglpi.php',
+        'App\\Models\\Proyectojira' => __DIR__ . '/../..' . '/app/Models/Proyectojira.php',
+        'App\\Models\\Proyectos' => __DIR__ . '/../..' . '/app/Models/Proyectos.php',
         'App\\Models\\Record' => __DIR__ . '/../..' . '/app/Models/Record.php',
+        'App\\Models\\SistemaAplicaciones' => __DIR__ . '/../..' . '/app/Models/SistemaAplicaciones.php',
+        'App\\Models\\SistemaBaseDatosQa' => __DIR__ . '/../..' . '/app/Models/SistemaBaseDatosQa.php',
+        'App\\Models\\SistemaHerramientasDeAdministracion' => __DIR__ . '/../..' . '/app/Models/SistemaHerramientasDeAdministracion.php',
+        'App\\Models\\Sistemas' => __DIR__ . '/../..' . '/app/Models/Sistemas.php',
         'App\\Models\\Solicitud' => __DIR__ . '/../..' . '/app/Models/Solicitud.php',
         'App\\Models\\Ticket' => __DIR__ . '/../..' . '/app/Models/Ticket.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
@@ -2870,6 +2886,11 @@ class ComposerStaticInit9489ff931b728db9fd6d7fad09a7d9da
         'JeroenNoten\\LaravelAdminLte\\View\\Components\\Widget\\ProfileWidget' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/View/Components/Widget/ProfileWidget.php',
         'JeroenNoten\\LaravelAdminLte\\View\\Components\\Widget\\Progress' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/View/Components/Widget/Progress.php',
         'JeroenNoten\\LaravelAdminLte\\View\\Components\\Widget\\SmallBox' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/View/Components/Widget/SmallBox.php',
+        'Laravel\\Breeze\\BreezeServiceProvider' => __DIR__ . '/..' . '/laravel/breeze/src/BreezeServiceProvider.php',
+        'Laravel\\Breeze\\Console\\InstallCommand' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallCommand.php',
+        'Laravel\\Breeze\\Console\\InstallsApiStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsApiStack.php',
+        'Laravel\\Breeze\\Console\\InstallsBladeStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsBladeStack.php',
+        'Laravel\\Breeze\\Console\\InstallsInertiaStacks' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsInertiaStacks.php',
         'Laravel\\Sail\\Console\\InstallCommand' => __DIR__ . '/..' . '/laravel/sail/src/Console/InstallCommand.php',
         'Laravel\\Sail\\Console\\PublishCommand' => __DIR__ . '/..' . '/laravel/sail/src/Console/PublishCommand.php',
         'Laravel\\Sail\\SailServiceProvider' => __DIR__ . '/..' . '/laravel/sail/src/SailServiceProvider.php',

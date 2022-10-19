@@ -92,12 +92,12 @@ $equipo3->tipo = "Laptop";
   <br>
   <br>
   <br>
-<form action="/baja/save" method="POST">
+<form action="/solicitud/save" method="POST">
     @csrf
 	<br>
 	<br>
 		<div class="container">
-		<h4>SOLICITUD DE BAJA SERVICIOS INTERNOS DE TICS USUARIOS EXTERNOS EN EL SIGTIC.</h4>
+		<h4>SOLICITUD DE ALTA SERVICIOS INTERNOS DE TICS USUARIOS EXTERNOS EN EL SIGTIC.</h4>
 		<h5>Ciudad de México a <?php echo date("j-m-Y"); ?> </h5>
 		<br>
 		<hr class="red">
@@ -133,7 +133,7 @@ $equipo3->tipo = "Laptop";
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header" name="datos_solicitante">
-					<h4>Información del usuario </h4>
+					<h4>Información del usuario a registrar:</h4>
 				</div>
 			</div>
 		</nav>
@@ -207,7 +207,7 @@ $equipo3->tipo = "Laptop";
 		
 		<h4>Servicios TIC</h4>
 		<div class="row">
-		@if (auth()->user()->vpn != "")
+		@if (auth()->user()->vpn == "")
 			<div class="col-md-3"><strong>VPN:</strong></div>
 			<div class="col-sm-1"><input type="radio" name="vpn" value="si" checked> Sí</div>
 			<div class="col-sm-1"><input type="radio" name="vpn" value="no"> No</div>
@@ -220,7 +220,7 @@ $equipo3->tipo = "Laptop";
 			<div class="col-sm-1"><input type="radio" name="ip_fija" value="no"> No</div>
 			<br>
 			<br>
-		@if (auth()->user()->internet != "")
+		@if (auth()->user()->internet == "")
 			<div class="col-md-3"><strong>Internet:</strong></div>
 			<div class="col-sm-1"><input type="radio" name="internet" value="si" checked> Sí</div>
 			<div class="col-sm-1"><input type="radio" name="internet" value="no"> No</div>
@@ -231,7 +231,7 @@ $equipo3->tipo = "Laptop";
 		<br>
 
 		<h4>Proyectos</h4>
-		@if (auth()->user()->gitlab != "")
+		@if (auth()->user()->gitlab == "")
 		<div class="row">
 			<div class="col-md-3"><strong>GitLab:</strong></div>
 			<div class="col-sm-1"><input type="radio" name="gitlab" value="si" checked> Sí</div>
@@ -239,14 +239,14 @@ $equipo3->tipo = "Laptop";
 			<br>
 			<br>
 		@endif
-		@if (auth()->user()->jira != "")
+		@if (auth()->user()->jira == "")
 			<div class="col-md-3"><strong>JIRA:</strong></div>
 			<div class="col-sm-1"><input type="radio" name="jira" value="si" checked> Sí</div>
 			<div class="col-sm-1"><input type="radio" name="jira" value="no"> No</div>
 			<br>
 			<br>
 		@endif
-		@if (auth()->user()->glpi != "")
+		@if (auth()->user()->glpi == "")
 			<div class="col-md-3"><strong>GLPI:</strong></div>
 			<div class="col-sm-1"><input type="radio" name="glpi" value="si" checked> Sí</div>
 			<div class="col-sm-1"><input type="radio" name="glpi" value="no"> No</div>

@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\BajaController;
 use App\Http\Controllers\ConsultaController;
 use App\Http\Controllers\EditarSolicitudController;
+use App\Http\Controllers\PerfilController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PostController;
@@ -37,6 +39,9 @@ Route::post('/login', [LoginController::class,'store']);
 //Salida del sistema SAU
 Route::get('/logout', [LogoutController::class,'store'])->name('logout');
 
+//Perfil
+Route::get('/perfil', [PerfilController::class,'vistaPerfil'])->name('perfil');
+
 //ingreso al dashborad de las solicitudes
 Route::get('/muro', [PostController::class,'index'])->name('post.index');
 
@@ -46,7 +51,11 @@ Route::post('/registro/save', [SolicitudesController::class,'saveRegistro']);
 Route::get('/solicitud', [SolicitudesController::class,'index']);
 Route::post('/solicitud/save', [SolicitudesController::class,'crear']);
 
+Route::get('/baja', [BajaController::class,'index']);
+Route::post('/baja/save', [BajaController::class,'crear']);
+
 Route::get('/consulta', [ConsultaController::class,'consulta']);
+Route::get('/consulta/{idEquipo}', [ConsultaController::class, 'consultaPermisos']);
 
 //Ruta pendiente para editar solicitud
 Route::get('/editar', [EditarSolicitudController::class,'index']);
@@ -66,6 +75,10 @@ Route::get('/solicitud/sendMail', [SolicitudesController::class, 'sendMail']);
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 

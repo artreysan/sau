@@ -1,42 +1,77 @@
 @extends('layouts.app')
 
-@section('titulo')
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Register') }}</div>
 
-<?php
-class direccion {
-    public $ubicacion;
-}
+                <div class="card-body">
+                    <form method="POST" action="{{ route('register') }}">
+                        @csrf
 
-$ubicacion1 = new direccion;
-$ubicacion1->ubicacion = "Av. Insurgentes Sur 1089, Col. Nochebuena, Benito Juárez, 3720, CDMX. Piso 8";
+                        <div class="row mb-3">
+                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
-$ubicacion2 = new direccion;
-$ubicacion2->ubicacion = "Av. Insurgentes Sur 1089, Col. Nochebuena, Benito Juárez, 3720, CDMX. Piso 9";
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-class empresa {
-    public $nombre;
-    public $contrato;
-}
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
-$empresa1 = new empresa;
-$empresa1->nombre = "Patito S.A. de C.V";
-$empresa1->contrato = "MVC-4589";
+                        <div class="row mb-3">
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
-$empresa2 = new empresa;
-$empresa2->nombre = "Electronica Sacachispas S.A de C.V";
-$empresa2->contrato = "BBC-3789";
-?>
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-    <div class="container">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header" name="datos_solicitante">
-                    <h4>Información del usuario a registrar:</h4>
-                </div>
-            </div>
-        </nav>
-        <hr class="red">
-    </div>
+<<<<<<< HEAD
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <div class="row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Register') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+=======
+ 
 @endsection
 
 @section('contenido')
@@ -47,36 +82,20 @@ $empresa2->contrato = "BBC-3789";
             outline: 0 none;
         }
     </style>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header" name="datos_solicitante">
+                    <h4>Información del usuario a registrar:</h4>
+                </div>
+            </div>
+        </nav>
+        <hr class="red">
+    </div>
 
     <form action="/crear" method="POST">
         @csrf
         <div class="container">
-            <div class="row">
-                <div class="col-md-3"><strong>Ubicación en la SICT:</strong></div>
-                <div class="col-md-3">
-                    <select name="direccion">
-                        <option value={{$ubicacion1->ubicacion}}>{{$ubicacion1->ubicacion}}</option>
-                        <option value={{$ubicacion2->ubicacion}}>{{$ubicacion2->ubicacion}}</option>
-                    </select>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-3"><strong>Empresa:</strong></div>
-                <div class="col-md-4">
-                    <select name="empresa">
-                        <option value={{$empresa1->nombre}}>{{$empresa1->nombre}}</option>
-                        <option value={{$empresa2->nombre}}>{{$empresa2->nombre}}</option>
-                    </select>
-                </div>
-                <div class="col-md-2"><strong>Contrato</strong></div>
-                <div class="col-md-2">
-                    <select name="contrato">
-                        <option value={{$empresa2->contrato}}>{{$empresa2->contrato}}</option>
-                        <option value={{$empresa2->contrato}}>{{$empresa2->contrato}}</option>
-                    </select>
-                </div>
-            </div>
             <hr>
             <div class="row">
                 <div class="col-md-3"><strong>Nombre(s):</strong></div>
@@ -144,17 +163,10 @@ $empresa2->contrato = "BBC-3789";
                 <div class="col-md-3">
                     <input class="border border-success" id="password_confirmation" name="password_confirmation"
                         type="password" placeholder=" Repite tu contraseña " required/>
+>>>>>>> 3ef3f6f86beedf9f46aeebace4c04257449b5582
                 </div>
-                <br>
-                <br>
-                @error('password_confirmation')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
             </div>
-            <br>
-            <input type="submit" value="Crear cuenta" class="btn btn-primary btn-md active" />
         </div>
-        <br>
-        <br>
-    </form>
+    </div>
+</div>
 @endsection

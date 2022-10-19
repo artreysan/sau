@@ -2,56 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use view;
-use Svg\Tag\Path;
 use App\Models\User;
-use App\Models\Solicitud;
 use Illuminate\Http\Request;
-use App\Mail\SolicitudMailable;
-use Barryvdh\DomPDF\Facade\Pdf;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
 use App\Models\Solicitud as ModelsSolicitud;
+use Barryvdh\DomPDF\Facade\Pdf;
 
-class SolicitudesController extends Controller{
-
-    public function __construct(){
-        $this->middleware('auth');
-    }
-
-    public function registro(){
-        return view('users.registro.registro');
-    }
-
+class BajaController extends Controller
+{
     public function index(){
-        return view('users.solicitud.solicitud');
-    }
-    
-    public function streamPDF( $fileID){
-        return response()->file(storage_path('pdf/'.$fileID.'_sau.pdf'));
+        return view('users.baja.baja');
     }
 
-    public function sendMail($solicitud){
-        $this->downloadPdf($solicitud);
-        $correo = new SolicitudMailable($solicitud);
-        Mail::to($solicitud->emailSend)->send($correo->attach(storage_path('pdf/'.$solicitud->fileID.'_sau.pdf')));
-        return "Menasaje enviado";
-    }
-    
     public function downloadPdf($solicitud){
         $path = storage_path('pdf/');
         $pdf_name = $solicitud->fileID.'_sau.pdf';
-        $pdf = Pdf::loadView('users.solicitud.pdf.sau', array('solicitud'=>$solicitud));
+        $pdf = Pdf::loadView('users.baja.pdf.sbu', array('solicitud'=>$solicitud));
         $pdf->save($path.'/'.$pdf_name);
         $pdf->setPaper('a4');
         return $pdf->stream($pdf_name);
     }
 
-    //Funcion para almacenar con ORM datos a la base de datos
     public function crear (Request $request){
         $solicitud = new  ModelsSolicitud();
-
         $solicitud->autorizador = $request->autorizador;
         switch($solicitud->autorizador){
             case "Ing. Mario César Herrera González": 
@@ -89,7 +61,7 @@ class SolicitudesController extends Controller{
         }
         $solicitud->funcion = $request->funcion;
         $solicitud->direccion = $request->direccion;
-        if(auth()->user()->vpn == ""){
+        if(auth()->user()->vpn != ""){
             $solicitud->vpn = $request->vpn; 
         }
         else{
@@ -97,30 +69,31 @@ class SolicitudesController extends Controller{
         }
         $solicitud->ip_fija = $request->ip_fija;
         
-        if(auth()->user()->internet == ""){
+        if(auth()->user()->internet != ""){
             $solicitud->internet = $request->internet;
         }
         else{
             $solicitud->internet = "no";
         }
-        if(auth()->user()->gitlab == ""){
+        if(auth()->user()->gitlab != ""){
             $solicitud->gitlab = $request->gitlab;
         }
         else{
             $solicitud->gitlab = "no";
         }
-        if(auth()->user()->jira == ""){
+        if(auth()->user()->jira != ""){
             $solicitud->jira = $request->jira;
         }
         else{
             $solicitud->jira = "no";
         }
-        if(auth()->user()->glpi == ""){
+        if(auth()->user()->glpi != ""){
             $solicitud->glpi = $request->glpi;
         }
         else{
             $solicitud->glpi = "no";
         }
+
         
 
         $solicitud->tipo_equipo = $request->tipo_equipo;
@@ -146,54 +119,9 @@ class SolicitudesController extends Controller{
         //Update query
         User::where('id', auth()->user()->id)->update([
            'solicitudes' => auth()->user()->solicitudes+1
-        ]);        
-
-        return redirect()->route('post.index');
-        // return redirect()->route('posts.index');
-    }
-
-    public function store(Request $solicitud){
-        $this->validate($solicitud,[
-            'id',
-            'nombre' => 'required|min:1|max:20',
-            'apellido_paterno' => 'required|min:5|max:100',
-            'apellido_materno' => 'required|min:5|max:100',
-            'autorizador' => 'required',
-            'puesto' => 'required',
-            'empresa' => 'required',
-            'direccion' => 'required',
-            'contrato' => 'required',
-            'funciones' => 'required|max:200',
-            'dir_activo',
-            'ip_fija',
-            'internet',
-            'tipo_equipo' => 'required',
-            'marca' => 'required',
-            'modelo' => 'required',
-            'serie' => 'required',
-            'mac' => 'required',
-            'ip_antigua' => 'required',
-            'fileID',
-            'equipo_propio' => 'required',
-            'equipo_sict' => 'required'
         ]);
-
-        return redirect()->route('posts.index');
-    }
-
-    public function editar()
-    {
-        return view('editar');
-    }
-
-
-    public function show(Request $fileID)
-    {
-        dd($fileID);
+        
+        return redirect()->route('post.index');
 
     }
-
-       
-    }
-
-
+}
