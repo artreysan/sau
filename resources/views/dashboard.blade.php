@@ -14,8 +14,8 @@
           <a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#"></a></li>
-            <li><a href="#">Algo</a></li>
-            <li><a href="#">Algo más aquí</a></li>
+            <li><a href="{{ url('/consulta') }}">Perfil</a></li>
+            <li><a href="#">Configuracion</a></li>
             <li class="divider"></li>
             <li><a href="{{route('principal')}}">Cerrar sesión</a></li>
           </ul>
@@ -69,16 +69,7 @@
               <span class="glyphicon glyphicon-plus-sign"> </span>
             </button>
           </a>
-      </div>
-      <div class="col-md-2">
-          <a href="{{ url('/consulta') }}">
-            <button class="btn btn-default " type="button"> 
-              Consulta
-              <span class="glyphicon glyphicon-plus-sign"> </span>
-            </button>
-          </a>
-      </div>
-      
+      </div>    
     </div>
   @endif
   
@@ -114,7 +105,9 @@
                     <td>{{$solicitud->created_at}}</td>
                     <td>
                       @if ( time() - $solicitud->startTime > 0 && time() - $solicitud->startTime < 3)
-                        <div id="circulo verde" style="height:30px; width:30px; background:#00ff00; -moz-border-radius:50px; -webkit-border-radius:50px; border-radius:50px;"></div>
+                        <div id="circulo verde" 
+                             style="height:30px; width:30px; background:#00ff00; -moz-border-radius:50px; -webkit-border-radius:50px; border-radius:50px;">
+                        </div>
                       @elseif ( time() - $solicitud->startTime >3 && time() - $solicitud->startTime < 6)
                         <div id="circulo verde" style="height:30px; width:30px; background:#FF9326; -moz-border-radius:50px; -webkit-border-radius:50px; border-radius:50px;"></div>
                       @elseif ( time() - $solicitud->startTime >6 && time() - $solicitud->startTime < 9)
@@ -132,8 +125,12 @@
               </table>
         </div>
         <br>
-        <div class="tab-pane" id="tab-02"></div>
-        <div class="tab-pane" id="tab-03"></div>
+        <div class="tab-pane" id="tab-02">
+            {{-- Contenido de la pestaña de activos --}}
+        </div>
+        <div class="tab-pane" id="tab-03">
+            {{-- Contenido de la pestaña de activos --}}
+        </div>
       </div>
       <br>
       <br>
@@ -153,8 +150,7 @@
           </div>
         </div>
       </div>
-      
-  @endif
+      @endif
   <br>
   <br>
   <br>

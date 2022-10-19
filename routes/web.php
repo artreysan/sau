@@ -66,3 +66,11 @@ Route::get('/solicitud/sendMail', [SolicitudesController::class, 'sendMail']);
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
