@@ -13,9 +13,7 @@
 </div>
 <br>
 <br>
-<br>
-<br>
-<br>
+
 <div class="container">
     <div class="row">
         <div class="col-md-6"><img src="{{asset('img/index.png')}}" style="width:100%;height:20%" alt="Logo"></div>

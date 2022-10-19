@@ -3,22 +3,17 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
+<<<<<<< HEAD
         'reference' => '6a9fa83aaebc33343259e9084b0c56398c266f3f',
+=======
+        'reference' => '50ca09305dfbfaf0c6c070a545c525858c1f064e',
+>>>>>>> parent of 6a9fa83 (Actualizacion de sau 19-10)
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        'almasaeed2010/adminlte' => array(
-            'pretty_version' => 'v3.2.0',
-            'version' => '3.2.0.0',
-            'reference' => 'bd4d9c72931f1dd28601b6bfb387554a381ad540',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../almasaeed2010/adminlte',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'barryvdh/laravel-dompdf' => array(
             'pretty_version' => 'v2.0.0',
             'version' => '2.0.0.0',
@@ -385,15 +380,6 @@
                 0 => 'v9.26.1',
             ),
         ),
-        'jeroennoten/laravel-adminlte' => array(
-            'pretty_version' => 'v3.8.4',
-            'version' => '3.8.4.0',
-            'reference' => 'f06dfd13a16b7449e89fb12a768184edd5db9bbc',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../jeroennoten/laravel-adminlte',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
@@ -421,7 +407,11 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
+<<<<<<< HEAD
             'reference' => '6a9fa83aaebc33343259e9084b0c56398c266f3f',
+=======
+            'reference' => '50ca09305dfbfaf0c6c070a545c525858c1f064e',
+>>>>>>> parent of 6a9fa83 (Actualizacion de sau 19-10)
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -469,15 +459,6 @@
             'reference' => 'dff39b661e827dae6e092412f976658df82dbac5',
             'type' => 'library',
             'install_path' => __DIR__ . '/../laravel/tinker',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
-        'laravel/ui' => array(
-            'pretty_version' => 'v4.0.2',
-            'version' => '4.0.2.0',
-            'reference' => '9aa6930c8ae98b2465594d7f14f4ac131bfd6a99',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../laravel/ui',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -1057,15 +1038,6 @@
             'install_path' => __DIR__ . '/../spatie/laravel-ignition',
             'aliases' => array(),
             'dev_requirement' => true,
-        ),
-        'spatie/laravel-permission' => array(
-            'pretty_version' => '5.5.5',
-            'version' => '5.5.5.0',
-            'reference' => 'f2303a70be60919811ca8afc313e8244fda00974',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../spatie/laravel-permission',
-            'aliases' => array(),
-            'dev_requirement' => false,
         ),
         'symfony/console' => array(
             'pretty_version' => 'v6.1.4',

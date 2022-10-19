@@ -75,6 +75,7 @@ Route::get('/solicitud/sendMail', [SolicitudesController::class, 'sendMail']);
 
 
 
+<<<<<<< HEAD
 
 Auth::routes();
 
@@ -87,3 +88,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+=======
+>>>>>>> parent of 6a9fa83 (Actualizacion de sau 19-10)
