@@ -32,6 +32,7 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -71,6 +72,8 @@
                         </div>
                     </form>
 =======
+=======
+>>>>>>> 3ef3f6f86beedf9f46aeebace4c04257449b5582
  
 @endsection
 
