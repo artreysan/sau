@@ -2,8 +2,6 @@
 
 @section('titulo')
 @endsection
-
-@section('contenido')
 <?php
 
 class autorizador {
@@ -65,31 +63,14 @@ $equipo2 = new equipo;
 $equipo2->tipo = "Pc";
 
 $equipo3 = new equipo;
-$equipo3->tipo = "Laptop";
-
 ?>
-<nav class="navbar navbar-inverse sub-navbar navbar-fixed-top">
-	<div class="container">
-	  <div class="collapse navbar-collapse" id="subenlaces">
-		<ul class="nav navbar-nav navbar-right">
-		  <li><a href="/muro">{{auth()->user()->name}} {{auth()->user()->apellido_paterno}} {{auth()->user()->apellido_materno}}</a></li>
-		  <li class="dropdown">
-			<a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></a>
-			<ul class="dropdown-menu" role="menu">
-			  <li><a href="#"></a></li>
-			  <li><a href="#">Algo</a></li>
-			  <li><a href="#">Algo más aquí</a></li>
-			  <li class="divider"></li>
-			  <li><a href="{{route('logout')}}">Cerrar sesión</a></li>
-			</ul>
-		  </li>
-		</ul>
-	  </div>
-	</div>
-  </nav>
-  <br>
-  <br>
-  <br>
+
+@section('contenido')
+
+@include('layouts.navbar')
+<br>
+<br>
+<br>
 <form action="/solicitud/save" method="POST">
     @csrf
 	<br>
@@ -141,8 +122,6 @@ $equipo3->tipo = "Laptop";
 			<div class="col-md-3">
 				<p>{{auth()->user()->name}}</p>	
 			</div>
-		</div>
-		<div class="row">
 			<div class="col-md-3"><strong>Apellido paterno:</strong></div>
 			<div class="col-md-3">
 				<p>{{auth()->user()->apellido_paterno}}</p>	
@@ -153,11 +132,19 @@ $equipo3->tipo = "Laptop";
 			</div>
 		</div>
 		<div class="row">
+			<div class="col-md-3"><strong>Función:</strong></div>
+			<div class="col-md-3">
+				<p>{{auth()->user()->funcion}}</p>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-md-3"><strong>Correo electronico:</strong></div>
 			<div class="col-md-3">
 				<p>{{auth()->user()->email}}</p>	
 			</div>
-		</div>	
+
+		</div>
+
 		<br>
 		<div class="row">
 			<div class="col-md-3"><strong>Ubicación en la SICT:</strong></div>
@@ -179,20 +166,6 @@ $equipo3->tipo = "Laptop";
 			</div><br>
 		</div>
 		<br>
-		<div class="row">
-			<div class="col-md-3"><strong>Funciones:</strong></div>
-			<div class="col-md-3">
-				<input
-					class="border border-success"
-					id="funcion"
-					name="funcion"
-					type="text"
-					placeholder=" Coloca tus funciones"
-					value="{{old ('funcion')}}"
-					required
-				/>
-			</div>
-		</div>
 		<br>
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">

@@ -9,14 +9,16 @@
         
     <link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" type="text/css" rel="stylesheet">
     <link href="{{asset('css/semaforo.css')}}" rel="stylesheet">
+    <!-- CSS only -->
+
 </head>
 
 <body>
     <header>
-
+    
     </header>
 
-        <div class="container">
+        <div class="container top-buffer bottom-buffer vertical-buffer center">
             @yield('contenido')
         </div>
     <div class="container">
@@ -28,6 +30,5 @@
     <!--Scrip del para el frame del GOB-->
     <script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>
 </body>
-
 </html>
 

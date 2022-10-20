@@ -153,6 +153,10 @@ $equipo3->tipo = "Laptop";
 			<div class="col-md-3">
 				<p>{{auth()->user()->apellido_materno}}</p>	
 			</div>
+			<div class="col-md-3"><strong>Rol:</strong></div>
+			<div class="col-md-3">
+				<p>{{auth()->user()->rol}}</p>	
+			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-3"><strong>Correo electronico:</strong></div>
@@ -181,20 +185,7 @@ $equipo3->tipo = "Laptop";
 			</div><br>
 		</div>
 		<br>
-		<div class="row">
-			<div class="col-md-3"><strong>Funciones:</strong></div>
-			<div class="col-md-3">
-				<input
-					class="border border-success"
-					id="funcion"
-					name="funcion"
-					type="text"
-					placeholder=" Coloca tus funciones"
-					value="{{old ('funcion')}}"
-					required
-				/>
-			</div>
-		</div>
+		
 		<br>
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">

@@ -6,27 +6,8 @@
 $finalizados = $solicitud;
 @endphp
 
-
 @section('contenido')
-    <nav class="navbar navbar-inverse sub-navbar navbar-fixed-top">
-        <div class="container">
-            <div class="collapse navbar-collapse" id="subenlaces">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/muro">{{ auth()->user()->name }} {{ auth()->user()->apellido_paterno }}
-                            {{ auth()->user()->apellido_materno }}</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown"
-                            role="button" aria-expanded="false"><span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ route('perfil') }}">Perfil</a></li>
-                            <li class="divider"></li>
-                            <li><a href="{{ url('/') }}">Cerrar sesión</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    @include('layouts.navbar')
     <br>
     <br>
     <br>
@@ -55,7 +36,7 @@ $finalizados = $solicitud;
                         <div class="col-md-2">
                             <a href="{{ url('/solicitud') }}">
                                 <button class="btn btn-default " type="button">
-                                    Soliocitud
+                                    Solicitud
                                     <span class="glyphicon glyphicon-plus-sign"> </span>
                                 </button>
                             </a>
@@ -115,21 +96,21 @@ $finalizados = $solicitud;
                         </thead>
                         <tbody class="table-group-divider">
                             @foreach ($solicitud as $solicitud)
-                                @if (time() - $solicitud->startTime < 777600/1080)
+                                @if (time() - $solicitud->startTime < 777600)
                                     <tr>
                                         <th scope="row">{{ $solicitud->fileID }}</th>
                                         <td>{{ $solicitud->created_at }}</td>
                                         <td>
 
-                                            @if (time() - $solicitud->startTime > 0 && time() - $solicitud->startTime < 259200/1080)
+                                            @if (time() - $solicitud->startTime > 0 && time() - $solicitud->startTime < 259200)
                                                 <div id="circulo verde"
                                                     style="height:30px; width:30px; background:#00ff00; -moz-border-radius:50px; -webkit-border-radius:50px; border-radius:50px;">
                                                 </div>
-                                            @elseif (time() - $solicitud->startTime > 259200/1080 && time() - $solicitud->startTime < 518400/1080)
+                                            @elseif (time() - $solicitud->startTime > 259200 && time() - $solicitud->startTime < 518400)
                                                 <div id="circulo verde"
                                                     style="height:30px; width:30px; background:#FF9326; -moz-border-radius:50px; -webkit-border-radius:50px; border-radius:50px;">
                                                 </div>
-                                            @elseif (time() - $solicitud->startTime > 518400/1080 && time() - $solicitud->startTime < 777600/1080)
+                                            @elseif (time() - $solicitud->startTime > 518400 && time() - $solicitud->startTime < 777600)
                                                 <div id="circulo verde"
                                                     style="height:30px; width:30px; background:#cc0000; -moz-border-radius:50px; -webkit-border-radius:50px; border-radius:50px;">
                                                 </div>
@@ -177,7 +158,7 @@ $finalizados = $solicitud;
 
                         <tbody class="table-group-divider">
                             @foreach ($finalizados as $finalizado)
-                                @if (time() - $finalizado->startTime > 777600/1080)
+                                @if (time() - $finalizado->startTime > 777600)
                                     <tr>
                                         <th scope="row">{{ $finalizado->fileID }}</th>
                                         <td>{{ $finalizado->created_at }}</td>

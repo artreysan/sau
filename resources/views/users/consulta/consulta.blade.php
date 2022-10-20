@@ -3,6 +3,7 @@
 @section('titulo','Consulta')
 
 @section('contenido')
+    @include('layouts.navbar')
     <br>
     <br>
 

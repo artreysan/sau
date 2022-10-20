@@ -41,6 +41,8 @@ Route::get('/logout', [LogoutController::class,'store'])->name('logout');
 
 //Perfil
 Route::get('/perfil', [PerfilController::class,'vistaPerfil'])->name('perfil');
+Route::get('/perfil/modificar', [PerfilController::class,'vistaModificarPerfil'])->name('modifar');
+Route::post('/perfil/modificar/save', [PerfilController::class,'guardarPerfilActualizado'])->name('modifar');
 
 //ingreso al dashborad de las solicitudes
 Route::get('/muro', [PostController::class,'index'])->name('post.index');
@@ -54,7 +56,7 @@ Route::post('/solicitud/save', [SolicitudesController::class,'crear']);
 Route::get('/baja', [BajaController::class,'index']);
 Route::post('/baja/save', [BajaController::class,'crear']);
 
-Route::get('/consulta', [ConsultaController::class,'consulta']);
+Route::get('/consulta', [ConsultaController::class,'consulta'])->name('consulta');
 Route::get('/consulta/{idEquipo}', [ConsultaController::class, 'consultaPermisos']);
 
 //Ruta pendiente para editar solicitud
