@@ -3,7 +3,11 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
+<<<<<<< HEAD
+        'reference' => '6a9fa83aaebc33343259e9084b0c56398c266f3f',
+=======
         'reference' => '50ca09305dfbfaf0c6c070a545c525858c1f064e',
+>>>>>>> parent of 6a9fa83 (Actualizacion de sau 19-10)
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -382,6 +386,15 @@
                 0 => '*',
             ),
         ),
+        'laravel/breeze' => array(
+            'pretty_version' => 'v1.14.0',
+            'version' => '1.14.0.0',
+            'reference' => '91ae7b749e9b3562355a78f945b4ee71153153f6',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/breeze',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
         'laravel/framework' => array(
             'pretty_version' => 'v9.26.1',
             'version' => '9.26.1.0',
@@ -394,7 +407,11 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
+<<<<<<< HEAD
+            'reference' => '6a9fa83aaebc33343259e9084b0c56398c266f3f',
+=======
             'reference' => '50ca09305dfbfaf0c6c070a545c525858c1f064e',
+>>>>>>> parent of 6a9fa83 (Actualizacion de sau 19-10)
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
