@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('poryecto');
             $table->string('coordinador');
             $table->string('nivelDeAcceso');
-
         });
     }
 

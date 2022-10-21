@@ -38,6 +38,9 @@ $empresa2->contrato = "BBC-3789";
             outline: 0 none;
         }
     </style>
+    <br>
+    <br>
+    <br>
     <div class="container">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -46,7 +49,6 @@ $empresa2->contrato = "BBC-3789";
                 </div>
             </div>
         </nav>
-        <hr class="red">
     </div>
 
     <form action="/crear" method="POST">
@@ -88,6 +90,20 @@ $empresa2->contrato = "BBC-3789";
                 @error('apellido_materno')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
+
+            </div>
+            <div class="row">
+                <div class="col-md-3"><strong>Función:</strong></div>
+                <div class="col-md-3">
+                    <input class="border border-success" id="funcion" name="funcion" type="text"
+                        placeholder=" Puesto o Cargo "  required/>
+                </div>
+                <br>
+                <br>
+                @error('apellido_materno')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
             </div>
             <div class="row">
                 <div class="col-md-3"><strong>Email:</strong></div>

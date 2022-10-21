@@ -87,7 +87,7 @@ class SolicitudesController extends Controller{
                 $solicitud->empresa = "Electronica Sacachispas S.A de C.V";
                 break;
         }
-        $solicitud->funcion = $request->funcion;
+        $solicitud->funcion = auth()->user()->funcion;
         $solicitud->direccion = $request->direccion;
         if(auth()->user()->vpn == ""){
             $solicitud->vpn = $request->vpn; 

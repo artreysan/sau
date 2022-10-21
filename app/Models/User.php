@@ -25,7 +25,7 @@ class User extends Authenticatable {
         'name',
         'apellido_paterno',
         'apellido_materno',
-        'rol',
+        'funcion',
         'email',
         'password',
         'admin',

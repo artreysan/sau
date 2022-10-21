@@ -22,7 +22,7 @@ class RegisterController extends Controller
         $user->name= $request->name;
         $user->apellido_paterno= $request->apellido_paterno;
         $user->apellido_materno= $request->apellido_materno;
-        $user->rol = "";
+        $user->funcion = $request->funcion; 
         $user->email= $request->email;
         $user->password= Hash::make ($request->password);
         $user->admin= false;

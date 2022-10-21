@@ -18,6 +18,10 @@ return new class extends Migration
             $table->char('nombre', 100);
             $table->char('apellido_paterno', 100);
             $table->char('apellido_materno', 100)->nullable();
+            $table->string('emailSend')->after('apellido_materno');
+            $table->unsignedInteger('userID');
+            $table->string('fileID')->nullable()->unique();
+            $table->unsignedInteger('startTime');
             $table->string('autorizador', 100);
             $table->string('puesto', 100);
             $table->string('empresa', 100);
@@ -50,28 +54,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('solicituds', function (Blueprint $table) {
-            $table->id();
-            $table->dropColumn('nombre');
-            $table->dropColumn('apellido_paterno');
-            $table->dropColumn('apellido_materno');
-            $table->dropColumn('autorizador');
-            $table->dropColumn('puesto');
-            $table->dropColumn('empresa');
-            $table->dropColumn('direccion');
-            $table->dropColumn('contrato');
-            $table->dropColumn('funcion');
-            $table->dropColumn('tipo_equipo');
-            $table->dropColumn('dir_activo');
-            $table->dropColumn('ip_fija');
-            $table->dropColumn('internet');
-            $table->dropColumn('marca');
-            $table->dropColumn('modelo');
-            $table->dropColumn('serie');
-            $table->dropColumn('mac');
-            $table->dropColumn('ip_antigua');
-            $table->dropColumn('equipo_propio');
-            $table->dropColumn('equipo_sict');
-        });
+        Schema::dropIfExists('solicituds');
+
     }
 };
