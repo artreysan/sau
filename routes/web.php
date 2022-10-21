@@ -12,6 +12,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\MostrarController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SolicitudesController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,18 +78,3 @@ Route::get('/solicitud/sendMail', [SolicitudesController::class, 'sendMail']);
 
 
 
-<<<<<<< HEAD
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-=======
->>>>>>> parent of 6a9fa83 (Actualizacion de sau 19-10)

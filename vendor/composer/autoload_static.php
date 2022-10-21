@@ -412,7 +412,6 @@ class ComposerStaticInit9489ff931b728db9fd6d7fad09a7d9da
         array (
             0 => __DIR__ . '/..' . '/laravel/sail/src',
         ),
-<<<<<<< HEAD
         'Laravel\\Breeze\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/breeze/src',
@@ -421,8 +420,6 @@ class ComposerStaticInit9489ff931b728db9fd6d7fad09a7d9da
         array (
             0 => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src',
         ),
-=======
->>>>>>> parent of 6a9fa83 (Actualizacion de sau 19-10)
         'Illuminate\\Support\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Macroable',
@@ -550,7 +547,6 @@ class ComposerStaticInit9489ff931b728db9fd6d7fad09a7d9da
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
-<<<<<<< HEAD
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -559,8 +555,6 @@ class ComposerStaticInit9489ff931b728db9fd6d7fad09a7d9da
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\BajaController' => __DIR__ . '/../..' . '/app/Http/Controllers/BajaController.php',
         'App\\Http\\Controllers\\ConsultaController' => __DIR__ . '/../..' . '/app/Http/Controllers/ConsultaController.php',
-=======
->>>>>>> parent of 6a9fa83 (Actualizacion de sau 19-10)
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/LoginController.php',
         'App\\Http\\Controllers\\LogoutController' => __DIR__ . '/../..' . '/app/Http/Controllers/LogoutController.php',
@@ -579,7 +573,6 @@ class ComposerStaticInit9489ff931b728db9fd6d7fad09a7d9da
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\Collaborator' => __DIR__ . '/../..' . '/app/Models/Collaborator.php',
-<<<<<<< HEAD
         'App\\Models\\Enterprise' => __DIR__ . '/../..' . '/app/Models/Enterprise.php',
         'App\\Models\\Equipo' => __DIR__ . '/../..' . '/app/Models/Equipo.php',
         'App\\Models\\Location' => __DIR__ . '/../..' . '/app/Models/Location.php',
@@ -593,9 +586,7 @@ class ComposerStaticInit9489ff931b728db9fd6d7fad09a7d9da
         'App\\Models\\SistemaHerramientasDeAdministracion' => __DIR__ . '/../..' . '/app/Models/SistemaHerramientasDeAdministracion.php',
         'App\\Models\\Sistemas' => __DIR__ . '/../..' . '/app/Models/Sistemas.php',
         'App\\Models\\Solicitud' => __DIR__ . '/../..' . '/app/Models/Solicitud.php',
-=======
         'App\\Models\\Request' => __DIR__ . '/../..' . '/app/Models/Request.php',
->>>>>>> parent of 6a9fa83 (Actualizacion de sau 19-10)
         'App\\Models\\Ticket' => __DIR__ . '/../..' . '/app/Models/Ticket.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
@@ -2798,7 +2789,6 @@ class ComposerStaticInit9489ff931b728db9fd6d7fad09a7d9da
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
-<<<<<<< HEAD
         'JeroenNoten\\LaravelAdminLte\\AdminLte' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/AdminLte.php',
         'JeroenNoten\\LaravelAdminLte\\AdminLteServiceProvider' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/AdminLteServiceProvider.php',
         'JeroenNoten\\LaravelAdminLte\\Console\\AdminLteInstallCommand' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Console/AdminLteInstallCommand.php',
@@ -2870,8 +2860,6 @@ class ComposerStaticInit9489ff931b728db9fd6d7fad09a7d9da
         'Laravel\\Breeze\\Console\\InstallsApiStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsApiStack.php',
         'Laravel\\Breeze\\Console\\InstallsBladeStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsBladeStack.php',
         'Laravel\\Breeze\\Console\\InstallsInertiaStacks' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsInertiaStacks.php',
-=======
->>>>>>> parent of 6a9fa83 (Actualizacion de sau 19-10)
         'Laravel\\Sail\\Console\\InstallCommand' => __DIR__ . '/..' . '/laravel/sail/src/Console/InstallCommand.php',
         'Laravel\\Sail\\Console\\PublishCommand' => __DIR__ . '/..' . '/laravel/sail/src/Console/PublishCommand.php',
         'Laravel\\Sail\\SailServiceProvider' => __DIR__ . '/..' . '/laravel/sail/src/SailServiceProvider.php',

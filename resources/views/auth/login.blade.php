@@ -2,19 +2,15 @@
 
 @section('contenido')
 <br>
-<<<<<<< HEAD
-=======
 <div class="container" >
     <br>
     <img width="300" height="40" src="{{URL('/img/logo.png')}}">
 </div>
 <br>
->>>>>>> parent of 6a9fa83 (Actualizacion de sau 19-10)
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
