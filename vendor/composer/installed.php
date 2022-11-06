@@ -3,11 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-<<<<<<< HEAD
-        'reference' => '6a9fa83aaebc33343259e9084b0c56398c266f3f',
-=======
-        'reference' => '50ca09305dfbfaf0c6c070a545c525858c1f064e',
->>>>>>> parent of 6a9fa83 (Actualizacion de sau 19-10)
+        'reference' => '6c8a812f66027a9e22f65cb6c4bdc3b2e268172a',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -407,11 +403,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-<<<<<<< HEAD
-            'reference' => '6a9fa83aaebc33343259e9084b0c56398c266f3f',
-=======
-            'reference' => '50ca09305dfbfaf0c6c070a545c525858c1f064e',
->>>>>>> parent of 6a9fa83 (Actualizacion de sau 19-10)
+            'reference' => '6c8a812f66027a9e22f65cb6c4bdc3b2e268172a',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

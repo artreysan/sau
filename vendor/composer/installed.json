@@ -1405,70 +1405,6 @@
             "install-path": "../hamcrest/hamcrest-php"
         },
         {
-<<<<<<< HEAD
-            "name": "jeroennoten/laravel-adminlte",
-            "version": "v3.8.4",
-            "version_normalized": "3.8.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jeroennoten/Laravel-AdminLTE.git",
-                "reference": "f06dfd13a16b7449e89fb12a768184edd5db9bbc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jeroennoten/Laravel-AdminLTE/zipball/f06dfd13a16b7449e89fb12a768184edd5db9bbc",
-                "reference": "f06dfd13a16b7449e89fb12a768184edd5db9bbc",
-                "shasum": ""
-            },
-            "require": {
-                "almasaeed2010/adminlte": "3.2.*",
-                "laravel/framework": ">=6.0",
-                "php": ">=7.2.0"
-            },
-            "require-dev": {
-                "orchestra/testbench": ">=4.0",
-                "phpunit/phpunit": ">=9.1",
-                "scrutinizer/ocular": "^1.9"
-            },
-            "time": "2022-08-18T15:19:54+00:00",
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "JeroenNoten\\LaravelAdminLte\\AdminLteServiceProvider"
-                    ]
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "JeroenNoten\\LaravelAdminLte\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jeroen Noten",
-                    "email": "jeroennoten@me.com"
-                }
-            ],
-            "description": "Easy AdminLTE integration with Laravel",
-            "keywords": [
-                "AdminLTE",
-                "admin",
-                "administrator",
-                "laravel"
-            ],
-            "support": {
-                "issues": "https://github.com/jeroennoten/Laravel-AdminLTE/issues",
-                "source": "https://github.com/jeroennoten/Laravel-AdminLTE/tree/v3.8.4"
-            },
-            "install-path": "../jeroennoten/laravel-adminlte"
-        },
-        {
             "name": "laravel/breeze",
             "version": "v1.14.0",
             "version_normalized": "1.14.0.0",
@@ -1533,8 +1469,6 @@
             "install-path": "../laravel/breeze"
         },
         {
-=======
->>>>>>> parent of 6a9fa83 (Actualizacion de sau 19-10)
             "name": "laravel/framework",
             "version": "v9.26.1",
             "version_normalized": "9.26.1.0",
