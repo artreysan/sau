@@ -43,7 +43,6 @@ return new class extends Migration
             $table->char('equipo_propio', 100)->nullable();;
             $table->char('equipo_sict', 2);
             $table->timestamps();
-            
         });
     }
 
@@ -54,7 +53,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('solicituds');
+        Schema::drop('solicituds');
 
     }
 };
